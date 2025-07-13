@@ -1,0 +1,32 @@
+POST http://localhost:8080/payments
+Content-Type: application/json
+
+{
+  "correlationId": "dc52c78d-e9c6-4f49-9f4f-0e2c63c5ba8a",
+  "amount": 10.00
+}
+###
+
+GET http://localhost:8080/payments-summary
+###
+
+GET http://localhost:8001/admin/payments-summary
+X-Rinha-Token: 123
+###
+
+GET http://localhost:8002/admin/payments-summary
+X-Rinha-Token: 123
+###
+
+#-- 5775
+#-- 8352
+
+#    const inconsistencies =
+#Math.abs(
+#186642.1 -
+#186642.1,
+#) +
+#Math.abs(
+# 94525.0-
+#94525.0,
+#);

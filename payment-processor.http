@@ -1,0 +1,2 @@
+### HEALTH CHECK PP
+GET http://localhost:8001/payments/service-health

@@ -1,0 +1,23 @@
+services:
+  redis:
+    image: redis:7.2-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    command: [ "redis-server", "--appendonly", "yes" ]
+    deploy:
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "25MB"
+
+#    networks:
+#      - backend
+
+
+#networks:
+#  backend:
+#    name: backend
+#    driver: bridge
+#  payment-processor:
+#    external: true
