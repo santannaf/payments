@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -26,11 +28,11 @@ public class PaymentsSummaryController {
 
     @GetMapping
     Map<String, Map<String, Object>> getPaymentSummary(
-            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Instant from,
-            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Instant to
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to
     ) {
-        long fromMillis = (from != null) ? from.toEpochMilli() : 0;
-        long toMillis = (to != null) ? to.toEpochMilli() : TIME_MAX;
+        long fromMillis = (from != null) ? from.toInstant(ZoneOffset.UTC).toEpochMilli() : 0;
+        long toMillis = (to != null) ? to.toInstant(ZoneOffset.UTC).toEpochMilli() : TIME_MAX;
         Map<String, Map<String, Object>> summary = new HashMap<>();
 
         for (String processor : processors) {

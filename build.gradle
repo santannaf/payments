@@ -57,7 +57,7 @@ graalvmNative {
             verbose = true
             debug = true
             buildArgs.addAll(
-                    "-march=native",
+                    "-march=compatibility",
                     '--color=always',
                     '--enable-preview',
                     "--allow-incomplete-classpath",

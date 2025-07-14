@@ -1,8 +1,10 @@
 package santannaf.payments.payments;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +13,11 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Locale;
 import java.util.UUID;
+import java.util.concurrent.BlockingQueue;
 
 @RestController
 @RequestMapping(path = {"/payments"})
-public class PaymentsController {
+public class PaymentsController implements CommandLineRunner {
     private final RedisTemplate<String, Object> redisTemplate;
     private final RestTemplate restTemplate;
 
@@ -23,9 +26,12 @@ public class PaymentsController {
     @Value("${services.payment.processor.fallback.url}")
     String fallbackURL;
 
-    public PaymentsController(RedisTemplate<String, Object> redisTemplate, RestTemplate restTemplate) {
+    private final BlockingQueue<Payment> paymentQueue;
+
+    public PaymentsController(RedisTemplate<String, Object> redisTemplate, RestTemplate restTemplate, BlockingQueue<Payment> paymentQueue) {
         this.redisTemplate = redisTemplate;
         this.restTemplate = restTemplate;
+        this.paymentQueue = paymentQueue;
     }
 
     @PostMapping
@@ -33,35 +39,34 @@ public class PaymentsController {
         Thread.ofVirtual().start(() -> sendProcessor(payment, selectorProcessor()));
     }
 
-    private final long[] backoffMillis = {800, 1500};
+    private final long[] backoffMillis = {75, 475};
     private static final int MAX_RETRIES = 3;
 
     private void sendProcessor(Payment payment, String processor) {
-        String url;
-        if (processor.equals("default")) url = defaultURL + "/payments";
-        else url = fallbackURL + "/payments";
-
+        String url = getUrl(processor);
         HttpEntity<Payment> entity = new HttpEntity<>(payment);
+        ResponseEntity<Void> response;
         for (int attempt = 0; attempt < MAX_RETRIES; attempt++) {
             try {
-                var response = restTemplate.postForEntity(url, entity, Void.class);
+                response = restTemplate.postForEntity(url, entity, Void.class);
                 if (response.getStatusCode().is2xxSuccessful()) updateSummary(processor, payment);
             } catch (Exception ignored) {
-                try {
-                    var response = restTemplate.postForEntity(fallbackURL + "/payments", entity, Void.class);
-                    if (response.getStatusCode().is2xxSuccessful()) updateSummary("fallback", payment);
-                } catch (Exception _) {
-                }
             }
 
             if (attempt < MAX_RETRIES - 1) {
                 try {
                     Thread.sleep(backoffMillis[attempt]);
+                    paymentQueue.add(payment);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
-            } else sendProcessor(payment, selectorProcessor());
+            }
         }
+    }
+
+    private String getUrl(String processor) {
+        if (processor.equals("default")) return defaultURL + "/payments";
+        else return fallbackURL + "/payments";
     }
 
     private String selectorProcessor() {
@@ -76,5 +81,16 @@ public class PaymentsController {
         String uniqueId = UUID.randomUUID().toString().substring(0, 8);
         String entryJson = String.format(Locale.US, "%.1f|1|%s", payment.getAmount(), uniqueId);
         redisTemplate.opsForZSet().add(key, entryJson, score);
+    }
+
+    @Override
+    public void run(String... args) {
+        while (true) {
+            try {
+                Payment payment = paymentQueue.take();
+                sendProcessor(payment, selectorProcessor());
+            } catch (Exception ignored) {
+            }
+        }
     }
 }

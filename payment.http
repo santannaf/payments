@@ -7,7 +7,7 @@ Content-Type: application/json
 }
 ###
 
-GET http://localhost:9999/payments-summary
+GET http://localhost:8080/payments-summary
 ###
 
 GET http://localhost:8001/admin/payments-summary
@@ -16,6 +16,9 @@ X-Rinha-Token: 123
 
 GET http://localhost:8002/admin/payments-summary
 X-Rinha-Token: 123
+###
+
+GET http://localhost:8080/payments-summary?from=2000-01-01T00:00:00
 ###
 
 #-- 5775

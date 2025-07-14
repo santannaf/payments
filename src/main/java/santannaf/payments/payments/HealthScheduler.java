@@ -14,6 +14,9 @@ public class HealthScheduler {
     @Value("${services.payment.processor.default.url}")
     String ppDefaultUrl;
 
+    @Value("${dc.env}")
+    String dcEnv;
+
     public HealthScheduler(RestTemplate restTemplate, RedisTemplate<String, Object> redisTemplate) {
         this.restTemplate = restTemplate;
         this.redisTemplate = redisTemplate;
@@ -24,7 +27,12 @@ public class HealthScheduler {
 
     @Scheduled(fixedRate = 5000)
     public void scheduleHealth() {
+        Thread.ofVirtual().start(this::processHealth);
+    }
+
+    void processHealth() {
         try {
+            if (dcEnv.equalsIgnoreCase("tb")) return;
             var response = restTemplate.getForEntity(ppDefaultUrl + "/payments/service-health", HealthResponse.class).getBody();
             assert response != null;
             System.out.println("System Payment Processor health: " + !response.failing());

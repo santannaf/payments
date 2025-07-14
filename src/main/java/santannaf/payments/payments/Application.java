@@ -9,12 +9,11 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.concurrent.ConcurrentTaskScheduler;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.Duration;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 @SpringBootApplication
 @EnableScheduling
@@ -26,15 +25,14 @@ public class Application {
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         return builder
-                .connectTimeout(Duration.ofSeconds(5))
-                .readTimeout(Duration.ofSeconds(5))
+                .connectTimeout(Duration.ofSeconds(2))
+                .readTimeout(Duration.ofSeconds(2))
                 .build();
     }
 
     @Bean
-    public ConcurrentTaskScheduler taskScheduler() {
-        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor(Thread.ofVirtual().name("scheduler-", 0).factory());
-        return new ConcurrentTaskScheduler(executor);
+    public BlockingQueue<Payment> paymentQueue() {
+        return new LinkedBlockingQueue<>();
     }
 
     @Bean

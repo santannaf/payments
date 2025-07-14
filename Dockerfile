@@ -10,4 +10,4 @@ RUN chmod 777 ./gradlew && \
 FROM container-registry.oracle.com/os/oraclelinux:9-slim
 COPY --from=builder /app/build/native/nativeCompile/payment /app/meuapp
 RUN chmod 777 /app/meuapp
-ENTRYPOINT ["/app/meuapp", "-Xmx145m"]
+ENTRYPOINT ["/app/meuapp", "-Xmx148m"]
