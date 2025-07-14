@@ -39,27 +39,24 @@ public class PaymentsController implements CommandLineRunner {
         Thread.ofVirtual().start(() -> sendProcessor(payment, selectorProcessor()));
     }
 
-    private final long[] backoffMillis = {75, 475};
-    private static final int MAX_RETRIES = 3;
-
     private void sendProcessor(Payment payment, String processor) {
         String url = getUrl(processor);
         HttpEntity<Payment> entity = new HttpEntity<>(payment);
         ResponseEntity<Void> response;
-        for (int attempt = 0; attempt < MAX_RETRIES; attempt++) {
-            try {
-                response = restTemplate.postForEntity(url, entity, Void.class);
-                if (response.getStatusCode().is2xxSuccessful()) updateSummary(processor, payment);
-            } catch (Exception ignored) {
-            }
+        boolean success = false;
+        try {
+            response = restTemplate.postForEntity(url, entity, Void.class);
+            success = response.getStatusCode().is2xxSuccessful();
+            if (success) updateSummary(processor, payment);
+        } catch (Exception ignored) {
+        }
 
-            if (attempt < MAX_RETRIES - 1) {
-                try {
-                    Thread.sleep(backoffMillis[attempt]);
-                    paymentQueue.add(payment);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
+        if (!success) {
+            try {
+                Thread.sleep(10);
+                paymentQueue.add(payment);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
         }
     }
