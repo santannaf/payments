@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -22,16 +21,19 @@ public class PaymentsSummaryController {
         this.redisTemplate = redisTemplate;
     }
 
+    private final String[] processors = {"default", "fallback"};
+    private static final long TIME_MAX = Long.MAX_VALUE;
+
     @GetMapping
     Map<String, Map<String, Object>> getPaymentSummary(
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Instant from,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Instant to
     ) {
         long fromMillis = (from != null) ? from.toEpochMilli() : 0;
-        long toMillis = (to != null) ? to.toEpochMilli() : Long.MAX_VALUE;
+        long toMillis = (to != null) ? to.toEpochMilli() : TIME_MAX;
         Map<String, Map<String, Object>> summary = new HashMap<>();
 
-        for (String processor : List.of("default", "fallback")) {
+        for (String processor : processors) {
             Set<Object> entries = fetchPaymentsByTimeFrame(processor, fromMillis, toMillis);
             extracted(processor, entries, summary);
         }

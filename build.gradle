@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'santannaf.payments'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 
 java {
     toolchain {
@@ -22,11 +22,47 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
     implementation 'redis.clients:jedis:6.0.0'
-//    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.19.1'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+tasks.bootJar {
+    archiveFileName.set("app.jar")
+}
+
+tasks.register('runCustomJar', Exec) {
+    group = 'application'
+    description = 'Run custom jar'
+    dependsOn 'bootJar'
+
+    def appName = 'app.jar'
+    def addressesBuild = "./build/libs/${appName}"
+
+    commandLine "${System.getenv('JAVA_HOME')}/bin/java",
+            '-agentlib:native-image-agent=config-merge-dir=./src/main/resources/META-INF/native-image/,experimental-class-loader-support',
+            '-jar',
+            addressesBuild
+}
+
+graalvmNative {
+    binaries {
+        main {
+            imageName = "payment"
+            mainClass = "santannaf.payments.payments.Application"
+            configurationFileDirectories.from(file('src/main/resources/META-INF/native-image'))
+            verbose = true
+            debug = true
+            buildArgs.addAll(
+                    "-march=native",
+                    '--color=always',
+                    '--enable-preview',
+                    "--allow-incomplete-classpath",
+                    "-J-Dfile.enconding=UTF-8"
+            )
+        }
+    }
 }

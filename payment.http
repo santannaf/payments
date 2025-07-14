@@ -7,7 +7,7 @@ Content-Type: application/json
 }
 ###
 
-GET http://localhost:8080/payments-summary
+GET http://localhost:9999/payments-summary
 ###
 
 GET http://localhost:8001/admin/payments-summary
@@ -23,10 +23,10 @@ X-Rinha-Token: 123
 
 #    const inconsistencies =
 #Math.abs(
-#186642.1 -
-#186642.1,
+#150205.2 -
+#150205.2,
 #) +
 #Math.abs(
-# 94525.0-
-#94525.0,
+# 130643.5-
+#151478.8 ,
 #);

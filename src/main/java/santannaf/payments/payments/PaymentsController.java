@@ -28,32 +28,15 @@ public class PaymentsController {
         this.restTemplate = restTemplate;
     }
 
-    private static final int MAX_RETRIES = 5;
-
     @PostMapping
     void pay(@RequestBody Payment payment) {
-        Thread.ofVirtual().start(() -> {
-            var processor = selectorProcessor();
-            var success = sendProcessor(payment, processor);
-
-            if (!success && processor.equals("default")) {
-                success = sendProcessor(payment, "fallback");
-                if (success) processor = "fallback";
-            }
-
-            if (success) updateSummary(processor, payment);
-        });
+        Thread.ofVirtual().start(() -> sendProcessor(payment, selectorProcessor()));
     }
 
-    private void updateSummary(String processor, Payment payment) {
-        String key = "summary:" + processor;
-        double score = payment.getRequestedAt().toEpochMilli();
-        String uniqueId = UUID.randomUUID().toString().substring(0, 8);
-        String entryJson = String.format(Locale.US, "%.1f|1|%s", payment.getAmount(), uniqueId);
-        redisTemplate.opsForZSet().add(key, entryJson, score);
-    }
+    private final long[] backoffMillis = {800, 1500};
+    private static final int MAX_RETRIES = 3;
 
-    private boolean sendProcessor(Payment payment, String processor) {
+    private void sendProcessor(Payment payment, String processor) {
         String url;
         if (processor.equals("default")) url = defaultURL + "/payments";
         else url = fallbackURL + "/payments";
@@ -62,26 +45,36 @@ public class PaymentsController {
         for (int attempt = 0; attempt < MAX_RETRIES; attempt++) {
             try {
                 var response = restTemplate.postForEntity(url, entity, Void.class);
-                if (response.getStatusCode().is2xxSuccessful()) return true;
+                if (response.getStatusCode().is2xxSuccessful()) updateSummary(processor, payment);
             } catch (Exception ignored) {
+                try {
+                    var response = restTemplate.postForEntity(fallbackURL + "/payments", entity, Void.class);
+                    if (response.getStatusCode().is2xxSuccessful()) updateSummary("fallback", payment);
+                } catch (Exception _) {
+                }
             }
 
             if (attempt < MAX_RETRIES - 1) {
                 try {
-                    Thread.sleep((long) Math.pow(2, attempt) * 1000);
+                    Thread.sleep(backoffMillis[attempt]);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
-                    return false;
                 }
-            }
+            } else sendProcessor(payment, selectorProcessor());
         }
-
-        return false;
     }
 
     private String selectorProcessor() {
         var isHealth = redisTemplate.opsForValue().get("processor:health");
         if (isHealth != null && (boolean) isHealth) return "default";
         return "fallback";
+    }
+
+    private void updateSummary(String processor, Payment payment) {
+        String key = "summary:" + processor;
+        double score = payment.getRequestedAt().toEpochMilli();
+        String uniqueId = UUID.randomUUID().toString().substring(0, 8);
+        String entryJson = String.format(Locale.US, "%.1f|1|%s", payment.getAmount(), uniqueId);
+        redisTemplate.opsForZSet().add(key, entryJson, score);
     }
 }

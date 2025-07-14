@@ -27,6 +27,7 @@ public class HealthScheduler {
         try {
             var response = restTemplate.getForEntity(ppDefaultUrl + "/payments/service-health", HealthResponse.class).getBody();
             assert response != null;
+            System.out.println("System Payment Processor health: " + !response.failing());
             redisTemplate.opsForValue().set("processor:health", !response.failing());
         } catch (Exception error) {
             redisTemplate.opsForValue().set("processor:health", false);
