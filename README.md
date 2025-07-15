@@ -22,8 +22,8 @@ Este projeto é um sistema de **pagamentos leves, resilientes e escaláveis**, c
 ├── nginx/
 │ └── nginx.conf # Configuração do load balancer
 └── src/
-└──────main/
-└────────java/santannaf/payments/...
+   └───main/
+      └────java/santannaf/payments/...
 ```
 ---
 
