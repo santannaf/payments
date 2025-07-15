@@ -12,7 +12,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.Duration;
+import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 @SpringBootApplication
@@ -31,8 +33,8 @@ public class Application {
     }
 
     @Bean
-    public BlockingQueue<Payment> paymentQueue() {
-        return new LinkedBlockingQueue<>();
+    public Queue<Payment> paymentQueue() {
+        return new ConcurrentLinkedQueue<>();
     }
 
     @Bean

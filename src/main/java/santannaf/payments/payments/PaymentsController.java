@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Locale;
+import java.util.Queue;
 import java.util.UUID;
-import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @RestController
 @RequestMapping(path = {"/payments"})
@@ -26,9 +28,11 @@ public class PaymentsController implements CommandLineRunner {
     @Value("${services.payment.processor.fallback.url}")
     String fallbackURL;
 
-    private final BlockingQueue<Payment> paymentQueue;
+    private final Queue<Payment> paymentQueue;
 
-    public PaymentsController(RedisTemplate<String, Object> redisTemplate, RestTemplate restTemplate, BlockingQueue<Payment> paymentQueue) {
+    public PaymentsController(RedisTemplate<String, Object> redisTemplate,
+                              RestTemplate restTemplate,
+                              Queue<Payment> paymentQueue) {
         this.redisTemplate = redisTemplate;
         this.restTemplate = restTemplate;
         this.paymentQueue = paymentQueue;
@@ -36,44 +40,30 @@ public class PaymentsController implements CommandLineRunner {
 
     @PostMapping
     void pay(@RequestBody Payment payment) {
-        Thread.ofVirtual().start(() -> sendProcessor(payment, selectorProcessor()));
+        paymentQueue.offer(payment);
     }
 
-    private void sendProcessor(Payment payment, String processor) {
-        String url = getUrl(processor);
+    private void sendProcessor(Payment payment) {
+        String url = getUrl();
         HttpEntity<Payment> entity = new HttpEntity<>(payment);
         ResponseEntity<Void> response;
         boolean success = false;
         try {
             response = restTemplate.postForEntity(url, entity, Void.class);
             success = response.getStatusCode().is2xxSuccessful();
-            if (success) updateSummary(processor, payment);
+            if (success) updateSummary(payment);
         } catch (Exception ignored) {
         }
 
-        if (!success) {
-            try {
-                Thread.sleep(10);
-                paymentQueue.add(payment);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
+        if (!success) paymentQueue.add(payment);
     }
 
-    private String getUrl(String processor) {
-        if (processor.equals("default")) return defaultURL + "/payments";
-        else return fallbackURL + "/payments";
+    private String getUrl() {
+        return defaultURL + "/payments";
     }
 
-    private String selectorProcessor() {
-        var isHealth = redisTemplate.opsForValue().get("processor:health");
-        if (isHealth != null && (boolean) isHealth) return "default";
-        return "fallback";
-    }
-
-    private void updateSummary(String processor, Payment payment) {
-        String key = "summary:" + processor;
+    private void updateSummary(Payment payment) {
+        String key = "summary:default";
         double score = payment.getRequestedAt().toEpochMilli();
         String uniqueId = UUID.randomUUID().toString().substring(0, 8);
         String entryJson = String.format(Locale.US, "%.1f|1|%s", payment.getAmount(), uniqueId);
@@ -82,12 +72,27 @@ public class PaymentsController implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        while (true) {
-            try {
-                Payment payment = paymentQueue.take();
-                sendProcessor(payment, selectorProcessor());
-            } catch (Exception ignored) {
-            }
+        processDefault();
+    }
+
+    private final ExecutorService workers = Executors.newVirtualThreadPerTaskExecutor();
+
+    void processDefault() {
+        workers(paymentQueue);
+    }
+
+    private void workers(Queue<Payment> paymentQueueFallback) {
+        for (int i = 1; i <= 5; i++) {
+            workers.submit(() -> {
+                while (true) {
+                    try {
+                        Payment payment = paymentQueueFallback.poll();
+                        if (payment == null) Thread.sleep(25);
+                        else sendProcessor(payment);
+                    } catch (InterruptedException ignored) {
+                    }
+                }
+            });
         }
     }
 }

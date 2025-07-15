@@ -18,7 +18,7 @@ GET http://localhost:8002/admin/payments-summary
 X-Rinha-Token: 123
 ###
 
-GET http://localhost:8080/payments-summary?from=2000-01-01T00:00:00
+GET http://localhost:8080/payments-summary?from=2025-07-14T22:35:36.294Z&to=2025-07-14T22:35:46.194Z
 ###
 
 #-- 5775
