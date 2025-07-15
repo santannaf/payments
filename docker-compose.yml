@@ -22,7 +22,7 @@ services:
       resources:
         limits:
           cpus: "0.10"
-          memory: 20MB
+          memory: 25MB
 
   redis:
     image: redis:7.2-alpine
@@ -35,12 +35,12 @@ services:
       resources:
         limits:
           cpus: "0.20"
-          memory: 30MB
+          memory: 25MB
     networks:
       - backend
 
   api01: &api
-    image: thalessantanna/payments-arm64:0.0.1
+    image: thalessantanna/payments:0.0.1
     hostname: api01
     container_name: api01
     pull_policy: always
