@@ -15,16 +15,16 @@ Este projeto é um sistema de **pagamentos leves, resilientes e escaláveis**, c
 ---
 
 ## 🧱 Estrutura do Projeto
-
+```
 ├── Dockerfile # Imagem com compilação nativa via GraalVM
 ├── build.gradle # Configuração Gradle com plugins do Spring e GraalVM
 ├── docker-compose.yml # Orquestração de serviços (API, Redis, NGINX)
 ├── nginx/
 │ └── nginx.conf # Configuração do load balancer
 └── src/
-└── main/
-└── java/santannaf/payments/...
-
+└──────main/
+└────────java/santannaf/payments/...
+```
 ---
 
 ## 🐳 Como subir o projeto com Docker
