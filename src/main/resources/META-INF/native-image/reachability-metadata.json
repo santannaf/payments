@@ -64,6 +64,15 @@
       "type": "[Z"
     },
     {
+      "type": "apple.security.AppleProvider",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
       "type": "boolean"
     },
     {
@@ -573,13 +582,7 @@
       ]
     },
     {
-      "type": "java.lang.Class",
-      "methods": [
-        {
-          "name": "getRecordComponents",
-          "parameterTypes": []
-        }
-      ]
+      "type": "java.lang.Class"
     },
     {
       "type": "java.lang.ClassLoader",
@@ -588,6 +591,9 @@
           "name": "classLoaderValueMap"
         }
       ]
+    },
+    {
+      "type": "java.lang.Cloneable"
     },
     {
       "type": "java.lang.Comparable"
@@ -786,19 +792,6 @@
       ]
     },
     {
-      "type": "java.lang.reflect.RecordComponent",
-      "methods": [
-        {
-          "name": "getName",
-          "parameterTypes": []
-        },
-        {
-          "name": "getType",
-          "parameterTypes": []
-        }
-      ]
-    },
-    {
       "type": "java.lang.reflect.Type"
     },
     {
@@ -869,7 +862,8 @@
       "type": "java.util.ArrayList"
     },
     {
-      "type": "java.util.Date"
+      "type": "java.util.Date",
+      "allDeclaredFields": true
     },
     {
       "type": "java.util.Enumeration"
@@ -896,13 +890,13 @@
       "type": "java.util.concurrent.Callable"
     },
     {
+      "type": "java.util.concurrent.ConcurrentLinkedQueue"
+    },
+    {
       "type": "java.util.concurrent.Executor"
     },
     {
       "type": "java.util.concurrent.Future"
-    },
-    {
-      "type": "java.util.concurrent.LinkedBlockingQueue"
     },
     {
       "type": "java.util.concurrent.ScheduledExecutorService"
@@ -3311,7 +3305,15 @@
     },
     {
       "type": "org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController",
-      "allDeclaredFields": true
+      "allDeclaredFields": true,
+      "methods": [
+        {
+          "name": "error",
+          "parameterTypes": [
+            "jakarta.servlet.http.HttpServletRequest"
+          ]
+        }
+      ]
     },
     {
       "type": "org.springframework.boot.autoconfigure.web.servlet.error.DefaultErrorViewResolver",
@@ -4929,9 +4931,6 @@
       "type": "org.springframework.scheduling.annotation.EnableScheduling"
     },
     {
-      "type": "org.springframework.scheduling.annotation.Scheduled"
-    },
-    {
       "type": "org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor",
       "allDeclaredFields": true
     },
@@ -5589,36 +5588,6 @@
       ]
     },
     {
-      "type": "santannaf.payments.payments.HealthScheduler",
-      "allDeclaredFields": true,
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": [
-            "org.springframework.web.client.RestTemplate",
-            "org.springframework.data.redis.core.RedisTemplate"
-          ]
-        },
-        {
-          "name": "scheduleHealth",
-          "parameterTypes": []
-        }
-      ]
-    },
-    {
-      "type": "santannaf.payments.payments.HealthScheduler$HealthResponse",
-      "allDeclaredFields": true,
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": [
-            "boolean",
-            "int"
-          ]
-        }
-      ]
-    },
-    {
       "type": "santannaf.payments.payments.Payment",
       "allDeclaredFields": true,
       "methods": [
@@ -5661,7 +5630,7 @@
           "parameterTypes": [
             "org.springframework.data.redis.core.RedisTemplate",
             "org.springframework.web.client.RestTemplate",
-            "java.util.concurrent.BlockingQueue"
+            "java.util.Queue"
           ]
         },
         {
@@ -6086,6 +6055,9 @@
       "glob": "META-INF/resources/index.html"
     },
     {
+      "glob": "META-INF/resources/purge-payments"
+    },
+    {
       "glob": "META-INF/services/ch.qos.logback.classic.spi.Configurator"
     },
     {
@@ -6194,13 +6166,19 @@
       "glob": "jakarta/servlet/LocalStrings.properties"
     },
     {
-      "glob": "jakarta/servlet/LocalStrings_en.properties"
+      "glob": "jakarta/servlet/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "jakarta/servlet/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "jakarta/servlet/http/LocalStrings.properties"
     },
     {
-      "glob": "jakarta/servlet/http/LocalStrings_en.properties"
+      "glob": "jakarta/servlet/http/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "jakarta/servlet/http/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "jndi.properties"
@@ -6242,13 +6220,37 @@
       "glob": "org/apache/catalina/authenticator/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/catalina/authenticator/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/authenticator/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/catalina/authenticator/jaspic/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/catalina/authenticator/jaspic/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/authenticator/jaspic/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/catalina/connector/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/catalina/connector/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/connector/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/catalina/core/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/catalina/core/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/core/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/catalina/core/RestrictedFilters.properties"
@@ -6263,28 +6265,76 @@
       "glob": "org/apache/catalina/deploy/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/catalina/deploy/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/deploy/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/catalina/loader/JdbcLeakPrevention.class"
     },
     {
       "glob": "org/apache/catalina/loader/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/catalina/loader/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/loader/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/catalina/mapper/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/catalina/mapper/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/mapper/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/catalina/mbeans/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/catalina/mbeans/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/mbeans/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/catalina/realm/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/catalina/realm/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/realm/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/catalina/security/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/catalina/security/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/security/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/catalina/session/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/catalina/session/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/session/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/catalina/startup/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/catalina/startup/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/startup/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/catalina/util/CharsetMapperDefault.properties"
@@ -6293,64 +6343,175 @@
       "glob": "org/apache/catalina/util/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/catalina/util/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/util/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/catalina/util/ServerInfo.properties"
     },
     {
       "glob": "org/apache/catalina/valves/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/catalina/valves/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/valves/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/catalina/webresources/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/catalina/webresources/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/catalina/webresources/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/coyote/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/coyote/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/coyote/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/coyote/http11/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/coyote/http11/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/coyote/http11/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/coyote/http11/filters/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/coyote/http11/filters/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/coyote/http11/filters/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/naming/LocalStrings.properties"
     },
     {
-      "glob": "org/apache/naming/LocalStrings_en.properties"
+      "glob": "org/apache/naming/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/naming/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/tomcat/util/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/tomcat/util/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/tomcat/util/buf/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/buf/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/buf/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/tomcat/util/compat/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/tomcat/util/compat/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/compat/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/tomcat/util/descriptor/web/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/descriptor/web/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/descriptor/web/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/tomcat/util/http/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/tomcat/util/http/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/http/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/tomcat/util/http/parser/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/http/parser/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/http/parser/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/tomcat/util/modeler/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/tomcat/util/modeler/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/modeler/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/tomcat/util/net/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/net/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/net/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/tomcat/util/scan/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/tomcat/util/scan/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/scan/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/tomcat/util/threads/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/threads/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/util/threads/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/apache/tomcat/websocket/LocalStrings.properties"
     },
     {
+      "glob": "org/apache/tomcat/websocket/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/websocket/LocalStrings_pt_BR.properties"
+    },
+    {
       "glob": "org/apache/tomcat/websocket/server/LocalStrings.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/websocket/server/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "org/apache/tomcat/websocket/server/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "org/springframework/aot/hint/annotation/Reflective.class"
@@ -6965,22 +7126,22 @@
       "glob": "public/index.html"
     },
     {
+      "glob": "public/purge-payments"
+    },
+    {
       "glob": "redis/clients/jedis/pom.properties"
     },
     {
       "glob": "resources/index.html"
     },
     {
+      "glob": "resources/purge-payments"
+    },
+    {
       "glob": "santannaf/payments/payments"
     },
     {
       "glob": "santannaf/payments/payments/Application.class"
-    },
-    {
-      "glob": "santannaf/payments/payments/HealthScheduler$HealthResponse.class"
-    },
-    {
-      "glob": "santannaf/payments/payments/HealthScheduler.class"
     },
     {
       "glob": "santannaf/payments/payments/PaymentsController.class"
@@ -6995,6 +7156,13 @@
       "glob": "static/index.html"
     },
     {
+      "glob": "static/purge-payments"
+    },
+    {
+      "module": "java.base",
+      "glob": "jdk/internal/icu/impl/data/icudt76b/nfc.nrm"
+    },
+    {
       "module": "java.xml",
       "glob": "jdk/xml/internal/jdkcatalog/JDKCatalog.xml"
     },
@@ -7007,199 +7175,199 @@
     {
       "name": "jakarta.servlet.LocalStrings",
       "locales": [
-        "en"
+        "pt-BR"
       ]
     },
     {
       "name": "jakarta.servlet.http.LocalStrings",
       "locales": [
-        "en"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.authenticator.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.authenticator.jaspic.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.connector.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.core.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.deploy.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.loader.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.mapper.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.mbeans.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.realm.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.security.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.session.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.startup.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.util.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.valves.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.catalina.webresources.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.coyote.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.coyote.http11.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.coyote.http11.filters.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.naming.LocalStrings",
       "locales": [
-        "en"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.util.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.util.buf.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.util.compat.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.util.descriptor.web.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.util.http.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.util.http.parser.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.util.modeler.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.util.net.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.util.scan.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.util.threads.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.websocket.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     },
     {
       "name": "org.apache.tomcat.websocket.server.LocalStrings",
       "locales": [
-        "und"
+        "pt-BR"
       ]
     }
   ],
