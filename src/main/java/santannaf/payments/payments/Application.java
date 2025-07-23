@@ -13,9 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.time.Duration;
 import java.util.Queue;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 
 @SpringBootApplication
 @EnableScheduling
@@ -27,8 +25,8 @@ public class Application {
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         return builder
-                .connectTimeout(Duration.ofSeconds(2))
-                .readTimeout(Duration.ofSeconds(2))
+                .connectTimeout(Duration.ofMillis(1600))
+                .readTimeout(Duration.ofMillis(1600))
                 .build();
     }
 
