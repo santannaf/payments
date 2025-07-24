@@ -1,0 +1,15 @@
+
+
+services:
+  redis:
+    image: redis:7.2-alpine
+    container_name: redis
+    hostname: redis
+    ports:
+      - "6379:6379"
+    command: [ "redis-server", "--appendonly", "yes" ]
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 25MB

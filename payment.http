@@ -1,8 +1,8 @@
-POST http://localhost:8080/payments
+POST http://localhost:9999/payments
 Content-Type: application/json
 
 {
-  "correlationId": "dc52c78d-e9c6-4f49-9f4f-0e2c63c5ba8a",
+  "correlationId": "dc52c78d-e9c6-4f49-9f4f-0e2c63c5ba8b",
   "amount": 10.00
 }
 ###

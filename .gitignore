@@ -26,6 +26,12 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
+**/rinha-test/**
+**/payment-processor/**
+*.json
+**/rinha-test
+**/payment-processor
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/

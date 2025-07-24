@@ -1,94 +1,78 @@
 package santannaf.payments.payments;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.Duration;
 import java.util.Queue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.locks.LockSupport;
 
 @RestController
 @RequestMapping(path = {"/payments"})
-public class PaymentsController implements CommandLineRunner {
-    private final RedisTemplate<String, Object> redisTemplate;
-    private final RestTemplate restTemplate;
+public class PaymentsController implements PaymentProcess {
+    private static final Duration TIMEOUT = Duration.ofSeconds(1);
+
+    private final RedisTemplate<String, String> redisTemplate;
     private final String defaultURL;
+    private final Queue<Payment> queue;
+    private final HttpClient httpClient;
 
-    private final Queue<Payment> paymentQueue;
-
-    public PaymentsController(RedisTemplate<String, Object> redisTemplate,
-                              RestTemplate restTemplate,
-                              Queue<Payment> paymentQueue,
-                              @Value("${services.payment.processor.default.url}") String defaultURL) {
+    public PaymentsController(RedisTemplate<String, String> redisTemplate,
+                              Queue<Payment> queue,
+                              @Value("${services.payment.processor.default.url}") String defaultURL,
+                              HttpClient httpClient) {
         this.redisTemplate = redisTemplate;
-        this.restTemplate = restTemplate;
-        this.paymentQueue = paymentQueue;
-        this.defaultURL = defaultURL;
+        this.queue = queue;
+        this.defaultURL = defaultURL + "/payments";
+        this.httpClient = httpClient;
     }
 
     @PostMapping
-    ResponseEntity<Void> pay(@RequestBody Payment payment) {
-        paymentQueue.offer(payment);
-        return ResponseEntity.accepted().build();
-    }
-
-    private void sendProcessor(final Payment payment) {
-        final String url = getUrl();
-        final HttpEntity<Payment> entity = new HttpEntity<>(payment);
-        ResponseEntity<Void> response;
-        boolean success = false;
-        try {
-            response = restTemplate.postForEntity(url, entity, Void.class);
-            success = response.getStatusCode().is2xxSuccessful();
-            if (success) updateSummary(payment);
-        } catch (Exception _) {
-        }
-
-        if (!success) paymentQueue.add(payment);
-    }
-
-    private String getUrl() {
-        return defaultURL + "/payments";
+    void pay(@RequestBody Payment payment) {
+        queue.offer(payment);
     }
 
     private void updateSummary(final Payment payment) {
-        final String key = "summary:default";
-        final double score = payment.getRequestedAt().toEpochMilli();
-        String uniqueId = Long.toHexString(ThreadLocalRandom.current().nextLong());
-        String entryJson = payment.getAmount() + "|1|" + uniqueId;
-        redisTemplate.opsForZSet().add(key, entryJson, score);
+        final double score = payment.getEpochMilli();
+        String entryJson = payment.getEntryJson();
+        redisTemplate.opsForZSet().add(payment.getKey(), entryJson, score);
     }
 
     @Override
-    public void run(String... args) {
-        processDefault();
-    }
-
-    private final ExecutorService workers = Executors.newVirtualThreadPerTaskExecutor();
-
-    void processDefault() {
-        startWorkers(paymentQueue);
-    }
-
-    private void startWorkers(Queue<Payment> paymentQueueFallback) {
-        for (int i = 1; i <= 5; i++) {
-            workers.submit(() -> {
-                while (true) {
-                    final Payment payment = paymentQueueFallback.poll();
-                    if (payment == null) LockSupport.parkNanos(10_000_000L);
-                    else sendProcessor(payment);
-                }
-            });
+    public void sendPayment(final Payment payment) {
+        try {
+            if (callDefault(payment)) {
+                updateSummary(payment);
+                return;
+            }
+        } catch (Exception _) {
         }
+
+        queue.offer(payment);
+    }
+
+    protected final URI url() {
+        return URI.create(defaultURL);
+    }
+
+    private boolean callDefault(final Payment payment) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(url())
+                .header("Content-Type", "application/json")
+                .timeout(TIMEOUT)
+                .POST(HttpRequest.BodyPublishers.ofString(payment.json()))
+                .build();
+
+        HttpResponse<Void> response = httpClient.send(request, HttpResponse.BodyHandlers.discarding());
+        var code = response.statusCode();
+        return code >= 200 && code < 300;
     }
 }
