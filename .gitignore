@@ -26,9 +26,11 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
+partial-results.json
+
 **/rinha-test/**
 **/payment-processor/**
-*.json
+
 **/rinha-test
 **/payment-processor
 

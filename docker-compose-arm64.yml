@@ -35,7 +35,7 @@ services:
       - backend
 
   api01: &api
-    image: thalessantanna/payments:0.0.2
+    image: thalessantanna/payments-arm64:0.0.1
     hostname: api01
     container_name: api01
     pull_policy: always
