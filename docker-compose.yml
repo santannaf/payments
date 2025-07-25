@@ -17,7 +17,7 @@ services:
       resources:
         limits:
           cpus: "0.20"
-          memory: 25MB
+          memory: 30MB
 
   redis:
     image: redis:7.2-alpine
@@ -30,19 +30,19 @@ services:
       resources:
         limits:
           cpus: "0.20"
-          memory: 25MB
+          memory: 20MB
     networks:
       - backend
 
   api01: &api
-    image: thalessantanna/payments:0.0.2
+    image: thalessantanna/payments:0.0.3
     hostname: api01
     container_name: api01
     pull_policy: always
     environment:
       - HOST_PROCESSOR_DEFAULT=http://payment-processor-default:8080
       - REDIS_HOST=redis
-      - POOL_FIXED_THREADS=5
+      - POOL_FIXED_THREADS=10
     networks:
       - backend
       - payment-processor
@@ -64,7 +64,7 @@ services:
     environment:
       - HOST_PROCESSOR_DEFAULT=http://payment-processor-default:8080
       - REDIS_HOST=redis
-      - POOL_FIXED_THREADS=5
+      - POOL_FIXED_THREADS=10
 
 networks:
   backend:

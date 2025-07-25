@@ -14,6 +14,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.util.Queue;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
 
 @RestController
 @RequestMapping(path = {"/payments"})
@@ -25,19 +27,23 @@ public class PaymentsController implements PaymentProcess {
     private final Queue<Payment> queue;
     private final HttpClient httpClient;
 
+    private final ExecutorService executorService;
+
     public PaymentsController(RedisTemplate<String, String> redisTemplate,
                               Queue<Payment> queue,
                               @Value("${services.payment.processor.default.url}") String defaultURL,
-                              HttpClient httpClient) {
+                              HttpClient httpClient, ExecutorService executorService) {
         this.redisTemplate = redisTemplate;
         this.queue = queue;
         this.defaultURL = defaultURL + "/payments";
         this.httpClient = httpClient;
+        this.executorService = executorService;
     }
 
     @PostMapping
     void pay(@RequestBody Payment payment) {
-        queue.offer(payment);
+        CompletableFuture.runAsync(() ->  queue.offer(payment), executorService);
+        //queue.offer(payment);
     }
 
     private void updateSummary(final Payment payment) {

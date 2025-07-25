@@ -46,6 +46,9 @@
       "type": "[Ljava.lang.annotation.Annotation;"
     },
     {
+      "type": "[Ljavax.management.ObjectName;"
+    },
+    {
       "type": "[Ljavax.management.openmbean.CompositeData;"
     },
     {
@@ -135,6 +138,12 @@
     {
       "type": "com.fasterxml.jackson.databind.ObjectMapper",
       "allDeclaredFields": true
+    },
+    {
+      "type": "com.fasterxml.jackson.databind.SerializationFeature"
+    },
+    {
+      "type": "com.fasterxml.jackson.databind.SerializationFeatureEditor"
     },
     {
       "type": "com.fasterxml.jackson.databind.ext.Java7SupportImpl",
@@ -375,16 +384,454 @@
       "type": "groovy.text.markup.MarkupTemplateEngine"
     },
     {
+      "type": "io.lettuce.core.AbstractRedisClient"
+    },
+    {
+      "type": "io.lettuce.core.ChannelGroupListener"
+    },
+    {
+      "type": "io.lettuce.core.ConnectionBuilder$PlainChannelInitializer"
+    },
+    {
+      "type": "io.lettuce.core.ConnectionEventTrigger"
+    },
+    {
+      "type": "io.lettuce.core.RedisAsyncCommandsImpl"
+    },
+    {
+      "type": "io.lettuce.core.RedisChannelHandler",
+      "fields": [
+        {
+          "name": "closed"
+        }
+      ]
+    },
+    {
       "type": "io.lettuce.core.RedisClient"
+    },
+    {
+      "type": "io.lettuce.core.RedisConnectionException"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.BaseRedisCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisAclCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisFunctionCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisGeoCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisHLLCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisHashCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisJsonCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisKeyCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisListCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisScriptingCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisServerCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisSetCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisSortedSetCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisStreamCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisStringCommands"
+    },
+    {
+      "type": "io.lettuce.core.api.sync.RedisTransactionalCommands"
+    },
+    {
+      "type": "io.lettuce.core.cluster.api.sync.RedisClusterCommands"
+    },
+    {
+      "type": "io.lettuce.core.event.connection.JfrConnectEvent",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "io.lettuce.core.event.connection.ConnectEvent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.event.connection.JfrConnectedEvent",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "io.lettuce.core.event.connection.ConnectionEventSupport"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.event.connection.JfrConnectionActivatedEvent",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "io.lettuce.core.event.connection.ConnectionEventSupport"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.event.connection.JfrConnectionCreatedEvent",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "io.lettuce.core.event.connection.ConnectionCreatedEvent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.event.connection.JfrConnectionDeactivatedEvent",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "io.lettuce.core.event.connection.ConnectionEventSupport"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.event.connection.JfrDisconnectedEvent",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "io.lettuce.core.event.connection.ConnectionEventSupport"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.metrics.DefaultCommandLatencyCollector",
+      "fields": [
+        {
+          "name": "pauseDetectorWrapper"
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.protocol.AsyncCommand",
+      "fields": [
+        {
+          "name": "count"
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.protocol.CommandEncoder"
+    },
+    {
+      "type": "io.lettuce.core.protocol.CommandHandler"
+    },
+    {
+      "type": "io.lettuce.core.protocol.CommandWrapper",
+      "fields": [
+        {
+          "name": "onComplete"
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.protocol.ConnectionWatchdog"
+    },
+    {
+      "type": "io.lettuce.core.protocol.DefaultEndpoint",
+      "fields": [
+        {
+          "name": "queueSize"
+        },
+        {
+          "name": "status"
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.protocol.RedisHandshakeHandler"
+    },
+    {
+      "type": "io.lettuce.core.protocol.SharedLock",
+      "fields": [
+        {
+          "name": "writers"
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.resource.ClientResources"
+    },
+    {
+      "type": "io.lettuce.core.resource.DefaultClientResources",
+      "allDeclaredFields": true,
+      "methods": [
+        {
+          "name": "shutdown",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.lettuce.core.support.ConnectionPoolSupport$1"
+    },
+    {
+      "type": "io.lettuce.core.support.ConnectionPoolSupport$RedisPooledObjectFactory"
+    },
+    {
+      "type": "io.micrometer.context.ContextRegistry"
     },
     {
       "type": "io.micrometer.context.ContextSnapshot"
     },
     {
+      "type": "io.netty.buffer.AbstractByteBufAllocator"
+    },
+    {
+      "type": "io.netty.buffer.AbstractReferenceCountedByteBuf",
+      "fields": [
+        {
+          "name": "refCnt"
+        }
+      ]
+    },
+    {
       "type": "io.netty.buffer.PooledByteBufAllocator"
     },
     {
+      "type": "io.netty.channel.AbstractChannelHandlerContext",
+      "fields": [
+        {
+          "name": "handlerState"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.channel.ChannelOutboundBuffer",
+      "fields": [
+        {
+          "name": "totalPendingSize"
+        },
+        {
+          "name": "unwritable"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.channel.DefaultChannelConfig",
+      "fields": [
+        {
+          "name": "autoRead"
+        },
+        {
+          "name": "writeBufferWaterMark"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.channel.DefaultChannelPipeline",
+      "fields": [
+        {
+          "name": "estimatorHandle"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.channel.DefaultChannelPipeline$HeadContext"
+    },
+    {
+      "type": "io.netty.channel.DefaultChannelPipeline$TailContext"
+    },
+    {
+      "type": "io.netty.channel.epoll.Epoll"
+    },
+    {
+      "type": "io.netty.channel.kqueue.KQueue"
+    },
+    {
+      "type": "io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe"
+    },
+    {
+      "type": "io.netty.channel.nio.NioEventLoop"
+    },
+    {
+      "type": "io.netty.channel.socket.nio.NioSocketChannel",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.netty.incubator.channel.uring.IOUring"
+    },
+    {
+      "type": "io.netty.resolver.dns$DnsAddressResolverGroup"
+    },
+    {
+      "type": "io.netty.resolver.dns.DnsAddressResolverGroup"
+    },
+    {
+      "type": "io.netty.util.DefaultAttributeMap",
+      "fields": [
+        {
+          "name": "attributes"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.DefaultAttributeMap$DefaultAttribute",
+      "fields": [
+        {
+          "name": "attributeMap"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.HashedWheelTimer",
+      "fields": [
+        {
+          "name": "workerState"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.HashedWheelTimer$HashedWheelTimeout",
+      "fields": [
+        {
+          "name": "state"
+        }
+      ]
+    },
+    {
       "type": "io.netty.util.NettyRuntime"
+    },
+    {
+      "type": "io.netty.util.Recycler$DefaultHandle",
+      "fields": [
+        {
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.ReferenceCountUtil"
+    },
+    {
+      "type": "io.netty.util.ResourceLeakDetector$DefaultResourceLeak",
+      "fields": [
+        {
+          "name": "droppedRecords"
+        },
+        {
+          "name": "head"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.concurrent.DefaultPromise",
+      "fields": [
+        {
+          "name": "result"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.concurrent.FastThreadLocalRunnable"
+    },
+    {
+      "type": "io.netty.util.concurrent.SingleThreadEventExecutor",
+      "fields": [
+        {
+          "name": "state"
+        },
+        {
+          "name": "threadProperties"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.concurrent.SingleThreadEventExecutor$4"
+    },
+    {
+      "type": "io.netty.util.internal.ThreadExecutorMap$2"
+    },
+    {
+      "type": "io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueColdProducerFields",
+      "fields": [
+        {
+          "name": "producerLimit"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueConsumerFields",
+      "fields": [
+        {
+          "name": "consumerIndex"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueProducerFields",
+      "fields": [
+        {
+          "name": "producerIndex"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueConsumerIndexField",
+      "fields": [
+        {
+          "name": "consumerIndex"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueProducerIndexField",
+      "fields": [
+        {
+          "name": "producerIndex"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueProducerLimitField",
+      "fields": [
+        {
+          "name": "producerLimit"
+        }
+      ]
     },
     {
       "type": "io.r2dbc.proxy.ProxyConnectionFactory"
@@ -405,10 +852,345 @@
       "type": "io.smallrye.mutiny.Multi"
     },
     {
-      "type": "io.undertow.Undertow"
+      "type": "io.undertow.Undertow",
+      "allDeclaredFields": true
+    },
+    {
+      "type": "io.undertow.UndertowLogger_$logger",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "org.jboss.logging.Logger"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.UndertowLogger_$logger_en"
+    },
+    {
+      "type": "io.undertow.UndertowOptions",
+      "allDeclaredFields": true
+    },
+    {
+      "type": "io.undertow.security.handlers.AbstractConfidentialityHandler"
+    },
+    {
+      "type": "io.undertow.security.handlers.AbstractSecurityContextAssociationHandler"
+    },
+    {
+      "type": "io.undertow.security.handlers.AuthenticationMechanismsHandler"
+    },
+    {
+      "type": "io.undertow.server.ConnectorStatisticsImpl",
+      "fields": [
+        {
+          "name": "activeConnections"
+        },
+        {
+          "name": "activeRequests"
+        },
+        {
+          "name": "bytesReceived"
+        },
+        {
+          "name": "bytesSent"
+        },
+        {
+          "name": "errorCount"
+        },
+        {
+          "name": "maxActiveConnections"
+        },
+        {
+          "name": "maxActiveRequests"
+        },
+        {
+          "name": "maxProcessingTime"
+        },
+        {
+          "name": "processingTime"
+        },
+        {
+          "name": "requestCount"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.server.Connectors"
+    },
+    {
+      "type": "io.undertow.server.DefaultByteBufferPool",
+      "fields": [
+        {
+          "name": "currentQueueLength"
+        },
+        {
+          "name": "reclaimedThreadLocals"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.server.DefaultByteBufferPool$DefaultPooledBuffer",
+      "fields": [
+        {
+          "name": "referenceCount"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.server.HttpServerExchange",
+      "fields": [
+        {
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.server.HttpServerExchange$1"
+    },
+    {
+      "type": "io.undertow.server.handlers.GracefulShutdownHandler",
+      "fields": [
+        {
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.server.handlers.PredicateHandler"
+    },
+    {
+      "type": "io.undertow.server.handlers.cache.LRUCache$CacheEntry",
+      "fields": [
+        {
+          "name": "accessToken"
+        },
+        {
+          "name": "hits"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.server.protocol.http.HttpReadListener",
+      "fields": [
+        {
+          "name": "requestState"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.server.protocol.http.HttpRequestParser$$generated",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "org.xnio.OptionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.servlet.UndertowServletLogger_$logger",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "org.jboss.logging.Logger"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.servlet.UndertowServletLogger_$logger_en"
+    },
+    {
+      "type": "io.undertow.servlet.core.ContextClassLoaderSetupAction$1"
+    },
+    {
+      "type": "io.undertow.servlet.core.ManagedFilter",
+      "fields": [
+        {
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.servlet.core.ManagedServlet",
+      "fields": [
+        {
+          "name": "unavailableUntil"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.DefaultServlet"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.FilterHandler"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.FilterHandler$FilterChainImpl"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.RedirectDirHandler"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.SendErrorPageHandler"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.ServletChain$1"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.ServletDispatchingHandler"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.ServletHandler"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.ServletInitialHandler"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.ServletInitialHandler$1"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.ServletInitialHandler$2"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.security.SSLInformationAssociationHandler"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler"
+    },
+    {
+      "type": "io.undertow.servlet.handlers.security.ServletSecurityRoleHandler"
+    },
+    {
+      "type": "io.undertow.servlet.spec.ServletContextImpl"
+    },
+    {
+      "type": "io.undertow.servlet.spec.ServletInputStreamImpl",
+      "fields": [
+        {
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.servlet.spec.ServletOutputStreamImpl",
+      "fields": [
+        {
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.util.FastConcurrentDirectDeque",
+      "fields": [
+        {
+          "name": "head"
+        },
+        {
+          "name": "tail"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.util.FastConcurrentDirectDeque$Node",
+      "fields": [
+        {
+          "name": "item"
+        },
+        {
+          "name": "next"
+        },
+        {
+          "name": "prev"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.util.Headers",
+      "allDeclaredFields": true
+    },
+    {
+      "type": "io.undertow.util.HttpString",
+      "fields": [
+        {
+          "name": "hashCode"
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.util.Methods",
+      "allDeclaredFields": true
+    },
+    {
+      "type": "io.undertow.util.Protocols",
+      "allDeclaredFields": true
     },
     {
       "type": "io.undertow.websockets.jsr.Bootstrap"
+    },
+    {
+      "type": "io.undertow.websockets.jsr.Bootstrap$WebSocketListener",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.websockets.jsr.DefaultWebSocketClientSslProvider"
+    },
+    {
+      "type": "io.undertow.websockets.jsr.JsrWebSocketFilter",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.websockets.jsr.JsrWebSocketFilter$LogoutListener",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.websockets.jsr.JsrWebSocketLogger_$logger",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "org.jboss.logging.Logger"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "io.undertow.websockets.jsr.JsrWebSocketLogger_$logger_en"
     },
     {
       "type": "io.vavr.control.Option"
@@ -465,13 +1247,7 @@
       "type": "jakarta.persistence.EntityManagerFactory"
     },
     {
-      "type": "jakarta.persistence.PersistenceContext"
-    },
-    {
       "type": "jakarta.servlet.Filter"
-    },
-    {
-      "type": "jakarta.servlet.GenericFilter"
     },
     {
       "type": "jakarta.servlet.GenericServlet",
@@ -522,9 +1298,6 @@
       "type": "jakarta.xml.bind.Binder"
     },
     {
-      "type": "jakarta.xml.ws.WebServiceRef"
-    },
-    {
       "type": "java.io.Closeable"
     },
     {
@@ -538,6 +1311,9 @@
     },
     {
       "type": "java.lang.AutoCloseable"
+    },
+    {
+      "type": "java.lang.BaseVirtualThread"
     },
     {
       "type": "java.lang.Boolean",
@@ -593,6 +1369,9 @@
       ]
     },
     {
+      "type": "java.lang.Enum"
+    },
+    {
       "type": "java.lang.Float",
       "fields": [
         {
@@ -630,6 +1409,19 @@
       "type": "java.lang.Object"
     },
     {
+      "type": "java.lang.ProcessHandle",
+      "methods": [
+        {
+          "name": "current",
+          "parameterTypes": []
+        },
+        {
+          "name": "pid",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
       "type": "java.lang.Record",
       "allDeclaredFields": true
     },
@@ -654,30 +1446,20 @@
     },
     {
       "type": "java.lang.Thread",
+      "fields": [
+        {
+          "name": "contextClassLoader"
+        }
+      ],
       "methods": [
         {
-          "name": "ofVirtual",
+          "name": "isVirtual",
           "parameterTypes": []
         }
       ]
     },
     {
-      "type": "java.lang.Thread$Builder",
-      "methods": [
-        {
-          "name": "name",
-          "parameterTypes": [
-            "java.lang.String",
-            "long"
-          ]
-        },
-        {
-          "name": "start",
-          "parameterTypes": [
-            "java.lang.Runnable"
-          ]
-        }
-      ]
+      "type": "java.lang.VirtualThread"
     },
     {
       "type": "java.lang.Void",
@@ -686,9 +1468,6 @@
           "name": "TYPE"
         }
       ]
-    },
-    {
-      "type": "java.lang.WrongThreadException"
     },
     {
       "type": "java.lang.annotation.Documented"
@@ -757,6 +1536,9 @@
       "type": "java.lang.reflect.GenericDeclaration"
     },
     {
+      "type": "java.lang.reflect.Method"
+    },
+    {
       "type": "java.lang.reflect.ParameterizedType",
       "methods": [
         {
@@ -805,17 +1587,36 @@
       "type": "java.math.BigInteger"
     },
     {
-      "type": "java.net.UnixDomainSocketAddress"
-    },
-    {
       "type": "java.net.http.HttpClient",
       "allDeclaredFields": true
     },
     {
-      "type": "java.nio.channels.ServerSocketChannel"
+      "type": "java.nio.Bits",
+      "fields": [
+        {
+          "name": "MAX_MEMORY"
+        },
+        {
+          "name": "UNALIGNED"
+        }
+      ]
     },
     {
-      "type": "java.nio.channels.SocketChannel"
+      "type": "java.nio.Buffer",
+      "fields": [
+        {
+          "name": "address"
+        }
+      ]
+    },
+    {
+      "type": "java.nio.ByteBuffer"
+    },
+    {
+      "type": "java.nio.DirectByteBuffer"
+    },
+    {
+      "type": "java.nio.channels.spi.SelectorProvider"
     },
     {
       "type": "java.security.AlgorithmParametersSpi"
@@ -827,44 +1628,20 @@
       "type": "java.sql.Date"
     },
     {
-      "type": "java.sql.DriverManager"
-    },
-    {
-      "type": "java.text.CompactNumberFormat"
-    },
-    {
-      "type": "java.text.ListFormat"
-    },
-    {
       "type": "java.text.NumberFormat"
     },
     {
       "type": "java.time.Duration"
     },
     {
-      "type": "java.util.ArrayList"
-    },
-    {
       "type": "java.util.Date",
       "allDeclaredFields": true
-    },
-    {
-      "type": "java.util.Enumeration"
     },
     {
       "type": "java.util.EventListener"
     },
     {
-      "type": "java.util.HashSet"
-    },
-    {
-      "type": "java.util.List"
-    },
-    {
-      "type": "java.util.SequencedCollection"
-    },
-    {
-      "type": "java.util.Set"
+      "type": "java.util.Optional"
     },
     {
       "type": "java.util.SortedSet"
@@ -892,15 +1669,6 @@
     },
     {
       "type": "java.util.logging.LoggingMXBean"
-    },
-    {
-      "type": "java.util.logging.SimpleFormatter",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": []
-        }
-      ]
     },
     {
       "type": "javax.annotation.ManagedBean"
@@ -963,9 +1731,6 @@
       "type": "javax.naming.ldap.LdapContext"
     },
     {
-      "type": "javax.security.auth.Subject"
-    },
-    {
       "type": "javax.sql.DataSource"
     },
     {
@@ -978,7 +1743,13 @@
       "type": "jdk.internal.loader.ClassLoaders$PlatformClassLoader"
     },
     {
-      "type": "jdk.internal.misc.Unsafe"
+      "type": "jdk.internal.misc.Unsafe",
+      "methods": [
+        {
+          "name": "getUnsafe",
+          "parameterTypes": []
+        }
+      ]
     },
     {
       "type": "jdk.internal.net.http.HttpClientFacade",
@@ -986,6 +1757,12 @@
     },
     {
       "type": "jdk.internal.net.http.common.OperationTrackers$Trackable"
+    },
+    {
+      "type": "jdk.internal.reflect.DirectMethodHandleAccessor"
+    },
+    {
+      "type": "jdk.jfr.Event"
     },
     {
       "type": "jdk.management.VirtualThreadSchedulerMXBean"
@@ -1027,32 +1804,22 @@
       "type": "liquibase.change.DatabaseChange"
     },
     {
-      "type": "org.apache.catalina.core.ApplicationContextFacade"
+      "type": "org.HdrHistogram$Histogram"
     },
     {
-      "type": "org.apache.catalina.loader.JdbcLeakPrevention",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": []
-        },
-        {
-          "name": "clearJdbcDriverRegistrations",
-          "parameterTypes": []
-        }
-      ]
+      "type": "org.HdrHistogram.Histogram"
+    },
+    {
+      "type": "org.LatencyUtils$PauseDetector"
+    },
+    {
+      "type": "org.LatencyUtils.PauseDetector"
     },
     {
       "type": "org.apache.catalina.startup.Tomcat"
     },
     {
-      "type": "org.apache.catalina.util.CharsetMapper",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": []
-        }
-      ]
+      "type": "org.apache.commons.pool2.BasePooledObjectFactory"
     },
     {
       "type": "org.apache.commons.pool2.ObjectPool"
@@ -1076,51 +1843,7 @@
       "type": "org.apache.commons.pool2.impl.GenericObjectPoolMXBean"
     },
     {
-      "type": "org.apache.coyote.AbstractProtocol",
-      "methods": [
-        {
-          "name": "getAddress",
-          "parameterTypes": []
-        },
-        {
-          "name": "getLocalPort",
-          "parameterTypes": []
-        },
-        {
-          "name": "getProperty",
-          "parameterTypes": [
-            "java.lang.String"
-          ]
-        },
-        {
-          "name": "setPort",
-          "parameterTypes": [
-            "int"
-          ]
-        },
-        {
-          "name": "setProperty",
-          "parameterTypes": [
-            "java.lang.String",
-            "java.lang.String"
-          ]
-        }
-      ]
-    },
-    {
       "type": "org.apache.coyote.UpgradeProtocol"
-    },
-    {
-      "type": "org.apache.coyote.http11.AbstractHttp11Protocol",
-      "methods": [
-        {
-          "name": "isSSLEnabled",
-          "parameterTypes": []
-        }
-      ]
-    },
-    {
-      "type": "org.apache.coyote.http11.Http11NioProtocol"
     },
     {
       "type": "org.apache.hc.client5.http.impl.async.HttpAsyncClients"
@@ -1130,9 +1853,6 @@
     },
     {
       "type": "org.apache.jasper.compiler.JspConfig"
-    },
-    {
-      "type": "org.apache.jasper.servlet.JspServlet"
     },
     {
       "type": "org.apache.logging.log4j.core.impl.Log4jContextFactory"
@@ -1145,23 +1865,6 @@
     },
     {
       "type": "org.apache.pulsar.client.api.PulsarClient"
-    },
-    {
-      "type": "org.apache.tomcat.util.net.AbstractEndpoint",
-      "methods": [
-        {
-          "name": "setBindOnInit",
-          "parameterTypes": [
-            "boolean"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "org.apache.tomcat.util.net.NioEndpoint"
-    },
-    {
-      "type": "org.apache.tomcat.websocket.server.WsFilter"
     },
     {
       "type": "org.apache.tomcat.websocket.server.WsSci"
@@ -1206,15 +1909,6 @@
       "type": "org.glassfish.jersey.server.spring.SpringComponentProvider"
     },
     {
-      "type": "org.graalvm.nativeimage.ImageInfo",
-      "methods": [
-        {
-          "name": "inImageCode",
-          "parameterTypes": []
-        }
-      ]
-    },
-    {
       "type": "org.h2.server.web.JakartaWebServlet"
     },
     {
@@ -1222,6 +1916,78 @@
     },
     {
       "type": "org.jboss.logging.Logger"
+    },
+    {
+      "type": "org.jboss.threads.EnhancedQueueExecutor",
+      "fields": [
+        {
+          "name": "activeCount"
+        },
+        {
+          "name": "peakQueueSize"
+        },
+        {
+          "name": "peakThreadCount"
+        },
+        {
+          "name": "queueSize"
+        },
+        {
+          "name": "terminationWaiters"
+        }
+      ]
+    },
+    {
+      "type": "org.jboss.threads.EnhancedQueueExecutor$MXBeanImpl"
+    },
+    {
+      "type": "org.jboss.threads.EnhancedQueueExecutor$QNode",
+      "fields": [
+        {
+          "name": "next"
+        }
+      ]
+    },
+    {
+      "type": "org.jboss.threads.EnhancedQueueExecutorBase1",
+      "fields": [
+        {
+          "name": "tail"
+        }
+      ]
+    },
+    {
+      "type": "org.jboss.threads.EnhancedQueueExecutorBase3",
+      "fields": [
+        {
+          "name": "head"
+        }
+      ]
+    },
+    {
+      "type": "org.jboss.threads.EnhancedQueueExecutorBase5",
+      "fields": [
+        {
+          "name": "threadStatus"
+        }
+      ]
+    },
+    {
+      "type": "org.jboss.threads.Messages_$logger",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "org.jboss.logging.Logger"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.jboss.threads.Messages_$logger_en"
+    },
+    {
+      "type": "org.jboss.threads.management.StandardThreadPoolMXBean"
     },
     {
       "type": "org.jmolecules.spring.IdentifierToPrimitivesConverter"
@@ -1245,7 +2011,20 @@
       "type": "org.slf4j.bridge.SLF4JBridgeHandler"
     },
     {
-      "type": "org.slf4j.spi.LocationAwareLogger"
+      "type": "org.slf4j.spi.LocationAwareLogger",
+      "methods": [
+        {
+          "name": "log",
+          "parameterTypes": [
+            "org.slf4j.Marker",
+            "java.lang.String",
+            "int",
+            "java.lang.String",
+            "java.lang.Object[]",
+            "java.lang.Throwable"
+          ]
+        }
+      ]
     },
     {
       "type": "org.springframework.aop.framework.AbstractAdvisingBeanPostProcessor",
@@ -1399,6 +2178,12 @@
           "parameterTypes": []
         }
       ]
+    },
+    {
+      "type": "org.springframework.boot.CommandLineRunner"
+    },
+    {
+      "type": "org.springframework.boot.Runner"
     },
     {
       "type": "org.springframework.boot.SpringBootConfiguration"
@@ -1741,7 +2526,10 @@
       ]
     },
     {
-      "type": "org.springframework.boot.autoconfigure.data.redis.JedisConnectionConfiguration",
+      "type": "org.springframework.boot.autoconfigure.data.redis.JedisConnectionConfiguration"
+    },
+    {
+      "type": "org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration",
       "allDeclaredFields": true,
       "methods": [
         {
@@ -1755,15 +2543,20 @@
           ]
         },
         {
-          "name": "redisConnectionFactoryVirtualThreads",
+          "name": "lettuceClientResources",
           "parameterTypes": [
             "org.springframework.beans.factory.ObjectProvider"
           ]
+        },
+        {
+          "name": "redisConnectionFactoryVirtualThreads",
+          "parameterTypes": [
+            "org.springframework.beans.factory.ObjectProvider",
+            "org.springframework.beans.factory.ObjectProvider",
+            "io.lettuce.core.resource.ClientResources"
+          ]
         }
       ]
-    },
-    {
-      "type": "org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration"
     },
     {
       "type": "org.springframework.boot.autoconfigure.data.redis.PropertiesRedisConnectionDetails",
@@ -1814,7 +2607,7 @@
           "parameterTypes": []
         },
         {
-          "name": "getJedis",
+          "name": "getLettuce",
           "parameterTypes": []
         },
         {
@@ -1835,7 +2628,7 @@
       "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$ClientTypeEditor"
     },
     {
-      "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$Jedis",
+      "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$Lettuce",
       "allDeclaredFields": true,
       "methods": [
         {
@@ -1863,6 +2656,19 @@
         {
           "name": "<init>",
           "parameterTypes": []
+        },
+        {
+          "name": "reactiveRedisTemplate",
+          "parameterTypes": [
+            "org.springframework.data.redis.connection.ReactiveRedisConnectionFactory",
+            "org.springframework.core.io.ResourceLoader"
+          ]
+        },
+        {
+          "name": "reactiveStringRedisTemplate",
+          "parameterTypes": [
+            "org.springframework.data.redis.connection.ReactiveRedisConnectionFactory"
+          ]
         }
       ]
     },
@@ -2365,6 +3171,10 @@
         {
           "name": "<init>",
           "parameterTypes": []
+        },
+        {
+          "name": "getSerialization",
+          "parameterTypes": []
         }
       ]
     },
@@ -2539,26 +3349,6 @@
       ]
     },
     {
-      "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$AsyncConfigurerConfiguration",
-      "allDeclaredFields": true,
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": []
-        },
-        {
-          "name": "applicationTaskExecutorAsyncConfigurer",
-          "parameterTypes": [
-            "org.springframework.beans.factory.BeanFactory"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$AsyncConfigurerConfiguration$1",
-      "allDeclaredFields": true
-    },
-    {
       "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$BootstrapExecutorConfiguration",
       "allDeclaredFields": true,
       "methods": [
@@ -2600,20 +3390,7 @@
       ]
     },
     {
-      "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$TaskExecutorConfiguration",
-      "allDeclaredFields": true,
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": []
-        },
-        {
-          "name": "applicationTaskExecutorVirtualThreads",
-          "parameterTypes": [
-            "org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder"
-          ]
-        }
-      ]
+      "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$TaskExecutorConfiguration"
     },
     {
       "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$ThreadPoolTaskExecutorBuilderConfiguration",
@@ -2779,6 +3556,56 @@
         {
           "name": "<init>",
           "parameterTypes": []
+        },
+        {
+          "name": "getUndertow",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.springframework.boot.autoconfigure.web.ServerProperties$Undertow",
+      "allDeclaredFields": true,
+      "methods": [
+        {
+          "name": "getThreads",
+          "parameterTypes": []
+        },
+        {
+          "name": "setBufferSize",
+          "parameterTypes": [
+            "org.springframework.util.unit.DataSize"
+          ]
+        },
+        {
+          "name": "setDirectBuffers",
+          "parameterTypes": [
+            "java.lang.Boolean"
+          ]
+        },
+        {
+          "name": "setMaxHttpPostSize",
+          "parameterTypes": [
+            "org.springframework.util.unit.DataSize"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.springframework.boot.autoconfigure.web.ServerProperties$Undertow$Threads",
+      "allDeclaredFields": true,
+      "methods": [
+        {
+          "name": "setIo",
+          "parameterTypes": [
+            "java.lang.Integer"
+          ]
+        },
+        {
+          "name": "setWorker",
+          "parameterTypes": [
+            "java.lang.Integer"
+          ]
         }
       ]
     },
@@ -2897,7 +3724,7 @@
       ]
     },
     {
-      "type": "org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration",
+      "type": "org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$UndertowWebServerFactoryCustomizerConfiguration",
       "allDeclaredFields": true,
       "methods": [
         {
@@ -2905,24 +3732,20 @@
           "parameterTypes": []
         },
         {
-          "name": "tomcatVirtualThreadsProtocolHandlerCustomizer",
-          "parameterTypes": []
-        },
-        {
-          "name": "tomcatWebServerFactoryCustomizer",
+          "name": "undertowWebServerFactoryCustomizer",
           "parameterTypes": [
             "org.springframework.core.env.Environment",
             "org.springframework.boot.autoconfigure.web.ServerProperties"
           ]
+        },
+        {
+          "name": "virtualThreadsUndertowDeploymentInfoCustomizer",
+          "parameterTypes": []
         }
       ]
     },
     {
-      "type": "org.springframework.boot.autoconfigure.web.embedded.TomcatVirtualThreadsWebServerFactoryCustomizer",
-      "allDeclaredFields": true
-    },
-    {
-      "type": "org.springframework.boot.autoconfigure.web.embedded.TomcatWebServerFactoryCustomizer",
+      "type": "org.springframework.boot.autoconfigure.web.embedded.UndertowWebServerFactoryCustomizer",
       "allDeclaredFields": true
     },
     {
@@ -3080,12 +3903,6 @@
             "org.springframework.beans.factory.ObjectProvider",
             "org.springframework.beans.factory.ObjectProvider"
           ]
-        },
-        {
-          "name": "tomcatServletWebServerFactoryCustomizer",
-          "parameterTypes": [
-            "org.springframework.boot.autoconfigure.web.ServerProperties"
-          ]
         }
       ]
     },
@@ -3102,7 +3919,10 @@
       "type": "org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedJetty"
     },
     {
-      "type": "org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat",
+      "type": "org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat"
+    },
+    {
+      "type": "org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedUndertow",
       "allDeclaredFields": true,
       "methods": [
         {
@@ -3110,24 +3930,26 @@
           "parameterTypes": []
         },
         {
-          "name": "tomcatServletWebServerFactory",
+          "name": "undertowServletWebServerFactory",
           "parameterTypes": [
-            "org.springframework.beans.factory.ObjectProvider",
             "org.springframework.beans.factory.ObjectProvider",
             "org.springframework.beans.factory.ObjectProvider"
           ]
+        },
+        {
+          "name": "undertowServletWebServerFactoryCustomizer",
+          "parameterTypes": [
+            "org.springframework.boot.autoconfigure.web.ServerProperties"
+          ]
         }
       ]
-    },
-    {
-      "type": "org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedUndertow"
     },
     {
       "type": "org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryCustomizer",
       "allDeclaredFields": true
     },
     {
-      "type": "org.springframework.boot.autoconfigure.web.servlet.TomcatServletWebServerFactoryCustomizer",
+      "type": "org.springframework.boot.autoconfigure.web.servlet.UndertowServletWebServerFactoryCustomizer",
       "allDeclaredFields": true
     },
     {
@@ -3366,7 +4188,7 @@
       "type": "org.springframework.boot.autoconfigure.web.servlet.error.ErrorViewResolver"
     },
     {
-      "type": "org.springframework.boot.autoconfigure.websocket.servlet.TomcatWebSocketServletWebServerCustomizer",
+      "type": "org.springframework.boot.autoconfigure.websocket.servlet.UndertowWebSocketServletWebServerCustomizer",
       "allDeclaredFields": true
     },
     {
@@ -3380,7 +4202,7 @@
       ]
     },
     {
-      "type": "org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration",
+      "type": "org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$UndertowWebSocketConfiguration",
       "allDeclaredFields": true,
       "methods": [
         {
@@ -3921,10 +4743,13 @@
       ]
     },
     {
-      "type": "org.springframework.boot.web.embedded.tomcat.ConfigurableTomcatWebServerFactory"
+      "type": "org.springframework.boot.web.embedded.undertow.ConfigurableUndertowWebServerFactory"
     },
     {
-      "type": "org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory",
+      "type": "org.springframework.boot.web.embedded.undertow.UndertowDeploymentInfoCustomizer"
+    },
+    {
+      "type": "org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory",
       "allDeclaredFields": true
     },
     {
@@ -4236,13 +5061,6 @@
       "type": "org.springframework.core.env.EnvironmentCapable"
     },
     {
-      "type": "org.springframework.core.task.AsyncListenableTaskExecutor"
-    },
-    {
-      "type": "org.springframework.core.task.SimpleAsyncTaskExecutor",
-      "allDeclaredFields": true
-    },
-    {
       "type": "org.springframework.core.type.classreading.MetadataReaderFactory"
     },
     {
@@ -4337,15 +5155,44 @@
       "type": "org.springframework.data.redis.connection.jedis.JedisConnection"
     },
     {
-      "type": "org.springframework.data.redis.connection.jedis.JedisConnectionFactory",
+      "type": "org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory",
       "allDeclaredFields": true
     },
     {
-      "type": "org.springframework.data.redis.core.ReactiveRedisTemplate"
+      "type": "org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider"
+    },
+    {
+      "type": "org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection"
+    },
+    {
+      "type": "org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider"
+    },
+    {
+      "type": "org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider"
+    },
+    {
+      "type": "org.springframework.data.redis.core.AbstractOperations"
+    },
+    {
+      "type": "org.springframework.data.redis.core.DefaultZSetOperations"
+    },
+    {
+      "type": "org.springframework.data.redis.core.ReactiveRedisOperations"
+    },
+    {
+      "type": "org.springframework.data.redis.core.ReactiveRedisTemplate",
+      "allDeclaredFields": true
+    },
+    {
+      "type": "org.springframework.data.redis.core.ReactiveStringRedisTemplate",
+      "allDeclaredFields": true
     },
     {
       "type": "org.springframework.data.redis.core.RedisAccessor",
       "allDeclaredFields": true
+    },
+    {
+      "type": "org.springframework.data.redis.core.RedisConnectionUtils"
     },
     {
       "type": "org.springframework.data.redis.core.RedisKeyValueAdapter",
@@ -4835,9 +5682,6 @@
       "type": "org.springframework.r2dbc.connection.init.DatabasePopulator"
     },
     {
-      "type": "org.springframework.scheduling.annotation.AsyncConfigurer"
-    },
-    {
       "type": "org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"
     },
     {
@@ -4917,11 +5761,10 @@
       "allDeclaredFields": true
     },
     {
-      "type": "org.springframework.util.CustomizableThreadCreator",
-      "allDeclaredFields": true
+      "type": "org.springframework.util.PathMatcher"
     },
     {
-      "type": "org.springframework.util.PathMatcher"
+      "type": "org.springframework.util.unit.DataSizeEditor"
     },
     {
       "type": "org.springframework.validation.Validator"
@@ -5012,11 +5855,17 @@
       "allDeclaredFields": true
     },
     {
+      "type": "org.springframework.web.method.annotation.ExceptionHandlerMethodResolver"
+    },
+    {
       "type": "org.springframework.web.method.support.CompositeUriComponentsContributor",
       "allDeclaredFields": true
     },
     {
       "type": "org.springframework.web.method.support.HandlerMethodArgumentResolver"
+    },
+    {
+      "type": "org.springframework.web.method.support.InvocableHandlerMethod"
     },
     {
       "type": "org.springframework.web.method.support.UriComponentsContributor"
@@ -5280,6 +6129,9 @@
       "allDeclaredFields": true
     },
     {
+      "type": "org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod"
+    },
+    {
       "type": "org.springframework.web.servlet.resource.ResourceUrlProvider",
       "allDeclaredFields": true
     },
@@ -5361,7 +6213,140 @@
       "type": "org.xmlbeam.XBProjector"
     },
     {
+      "type": "org.xnio.Connection",
+      "fields": [
+        {
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "type": "org.xnio.Options",
+      "allDeclaredFields": true
+    },
+    {
       "type": "org.xnio.SslClientAuthMode"
+    },
+    {
+      "type": "org.xnio.XnioWorker",
+      "fields": [
+        {
+          "name": "taskSeq"
+        }
+      ]
+    },
+    {
+      "type": "org.xnio._private.Messages_$logger",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "org.jboss.logging.Logger"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.xnio._private.Messages_$logger_en"
+    },
+    {
+      "type": "org.xnio.management.XnioProviderMXBean"
+    },
+    {
+      "type": "org.xnio.management.XnioServerMXBean"
+    },
+    {
+      "type": "org.xnio.management.XnioWorkerMXBean"
+    },
+    {
+      "type": "org.xnio.nio.AbstractNioChannel",
+      "allDeclaredFields": true
+    },
+    {
+      "type": "org.xnio.nio.Log_$logger",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "org.jboss.logging.Logger"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.xnio.nio.Log_$logger_en"
+    },
+    {
+      "type": "org.xnio.nio.NioSocketConduit",
+      "fields": [
+        {
+          "name": "readTimeout"
+        },
+        {
+          "name": "writeTimeout"
+        }
+      ]
+    },
+    {
+      "type": "org.xnio.nio.NioTcpServer",
+      "fields": [
+        {
+          "name": "connectionStatus"
+        },
+        {
+          "name": "keepAlive"
+        },
+        {
+          "name": "oobInline"
+        },
+        {
+          "name": "readTimeout"
+        },
+        {
+          "name": "sendBuffer"
+        },
+        {
+          "name": "tcpNoDelay"
+        },
+        {
+          "name": "writeTimeout"
+        }
+      ]
+    },
+    {
+      "type": "org.xnio.nio.NioTcpServer$1"
+    },
+    {
+      "type": "org.xnio.nio.NioXnio$3"
+    },
+    {
+      "type": "org.xnio.nio.NioXnioProvider"
+    },
+    {
+      "type": "org.xnio.nio.NioXnioWorker",
+      "fields": [
+        {
+          "name": "shutdownWaiter"
+        },
+        {
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "type": "org.xnio.nio.NioXnioWorker$NioWorkerMetrics"
+    },
+    {
+      "type": "org.xnio.nio.QueuedNioTcpServer2",
+      "allDeclaredFields": true
+    },
+    {
+      "type": "org.xnio.nio.WorkerThread",
+      "fields": [
+        {
+          "name": "state"
+        }
+      ]
     },
     {
       "type": "reactor.core.publisher.Flux"
@@ -5370,7 +6355,50 @@
       "type": "reactor.core.publisher.Hooks"
     },
     {
+      "type": "reactor.core.publisher.LambdaMonoSubscriber",
+      "fields": [
+        {
+          "name": "subscription"
+        }
+      ]
+    },
+    {
       "type": "reactor.core.publisher.Mono"
+    },
+    {
+      "type": "reactor.core.publisher.MonoCallable$MonoCallableSubscription",
+      "fields": [
+        {
+          "name": "requestedOnce"
+        }
+      ]
+    },
+    {
+      "type": "reactor.core.publisher.SinkManyBestEffort",
+      "fields": [
+        {
+          "name": "subscribers"
+        }
+      ]
+    },
+    {
+      "type": "reactor.core.publisher.SinksSpecs$AbstractSerializedSink",
+      "fields": [
+        {
+          "name": "lockedAt"
+        },
+        {
+          "name": "wip"
+        }
+      ]
+    },
+    {
+      "type": "reactor.core.scheduler.DelegateServiceScheduler",
+      "fields": [
+        {
+          "name": "state"
+        }
+      ]
     },
     {
       "type": "reactor.netty.http.client.HttpClient"
@@ -5385,15 +6413,24 @@
       "type": "redis.clients.jedis.Jedis"
     },
     {
-      "type": "redis.clients.jedis.JedisPool"
-    },
-    {
       "type": "santannaf.payments.payments.Application",
       "allDeclaredFields": true,
       "methods": [
         {
-          "name": "httpClient",
+          "name": "commandLineRunner",
+          "parameterTypes": [
+            "java.net.http.HttpClient"
+          ]
+        },
+        {
+          "name": "executorService",
           "parameterTypes": []
+        },
+        {
+          "name": "httpClient",
+          "parameterTypes": [
+            "java.util.concurrent.ExecutorService"
+          ]
         },
         {
           "name": "main",
@@ -5502,7 +6539,8 @@
             "org.springframework.data.redis.core.RedisTemplate",
             "java.util.Queue",
             "java.lang.String",
-            "java.net.http.HttpClient"
+            "java.net.http.HttpClient",
+            "java.util.concurrent.ExecutorService"
           ]
         },
         {
@@ -5558,6 +6596,39 @@
     },
     {
       "type": "sun.management.RuntimeImpl"
+    },
+    {
+      "type": "sun.misc.Unsafe",
+      "fields": [
+        {
+          "name": "theUnsafe"
+        }
+      ],
+      "methods": [
+        {
+          "name": "invokeCleaner",
+          "parameterTypes": [
+            "java.nio.ByteBuffer"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.nio.ch.Net"
+    },
+    {
+      "type": "sun.nio.ch.SelectorImpl",
+      "fields": [
+        {
+          "name": "publicSelectedKeys"
+        },
+        {
+          "name": "selectedKeys"
+        }
+      ]
+    },
+    {
+      "type": "sun.nio.ch.SocketChannelImpl"
     },
     {
       "type": "sun.security.pkcs12.PKCS12KeyStore",
@@ -5873,6 +6944,14 @@
     {
       "type": {
         "proxy": [
+          "io.lettuce.core.api.sync.RedisCommands",
+          "io.lettuce.core.cluster.api.sync.RedisClusterCommands"
+        ]
+      }
+    },
+    {
+      "type": {
+        "proxy": [
           "java.lang.reflect.ParameterizedType",
           "org.springframework.core.SerializableTypeWrapper$SerializableTypeProxy",
           "java.io.Serializable"
@@ -5930,6 +7009,12 @@
       "glob": "META-INF/services/ch.qos.logback.classic.spi.Configurator"
     },
     {
+      "glob": "META-INF/services/io.undertow.servlet.ServletExtension"
+    },
+    {
+      "glob": "META-INF/services/io.undertow.websockets.jsr.WebsocketClientSslProvider"
+    },
+    {
       "glob": "META-INF/services/java.lang.System$LoggerFinder"
     },
     {
@@ -5942,9 +7027,6 @@
       "glob": "META-INF/services/java.nio.channels.spi.SelectorProvider"
     },
     {
-      "glob": "META-INF/services/java.sql.Driver"
-    },
-    {
       "glob": "META-INF/services/java.time.zone.ZoneRulesProvider"
     },
     {
@@ -5954,10 +7036,10 @@
       "glob": "META-INF/services/javax.xml.transform.TransformerFactory"
     },
     {
-      "glob": "META-INF/services/org.apache.juli.logging.Log"
+      "glob": "META-INF/services/org.slf4j.spi.SLF4JServiceProvider"
     },
     {
-      "glob": "META-INF/services/org.slf4j.spi.SLF4JServiceProvider"
+      "glob": "META-INF/services/org.xnio.XnioProvider"
     },
     {
       "glob": "META-INF/spring-autoconfigure-metadata.properties"
@@ -6029,6 +7111,9 @@
       "glob": "git.properties"
     },
     {
+      "glob": "io/undertow/version.properties"
+    },
+    {
       "glob": "jakarta/servlet/LocalStrings.properties"
     },
     {
@@ -6077,118 +7162,7 @@
       "glob": "messages.properties"
     },
     {
-      "glob": "org/apache/catalina/authenticator/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/authenticator/jaspic/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/connector/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/core/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/core/RestrictedFilters.properties"
-    },
-    {
-      "glob": "org/apache/catalina/core/RestrictedListeners.properties"
-    },
-    {
-      "glob": "org/apache/catalina/core/RestrictedServlets.properties"
-    },
-    {
-      "glob": "org/apache/catalina/deploy/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/loader/JdbcLeakPrevention.class"
-    },
-    {
-      "glob": "org/apache/catalina/loader/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/mapper/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/mbeans/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/realm/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/security/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/session/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/startup/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/util/CharsetMapperDefault.properties"
-    },
-    {
-      "glob": "org/apache/catalina/util/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/util/ServerInfo.properties"
-    },
-    {
-      "glob": "org/apache/catalina/valves/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/catalina/webresources/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/coyote/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/coyote/http11/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/coyote/http11/filters/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/naming/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/naming/LocalStrings_en.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/util/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/util/buf/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/util/compat/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/util/descriptor/web/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/util/http/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/util/http/parser/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/util/modeler/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/util/net/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/util/scan/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/util/threads/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/websocket/LocalStrings.properties"
-    },
-    {
-      "glob": "org/apache/tomcat/websocket/server/LocalStrings.properties"
+      "glob": "org/jboss/threads/Version.properties"
     },
     {
       "glob": "org/springframework/aot/hint/annotation/Reflective.class"
@@ -6303,6 +7277,9 @@
     },
     {
       "glob": "org/springframework/boot/autoconfigure/data/redis/JedisConnectionConfiguration.class"
+    },
+    {
+      "glob": "org/springframework/boot/autoconfigure/data/redis/LettuceConnectionConfiguration$PoolBuilderFactory.class"
     },
     {
       "glob": "org/springframework/boot/autoconfigure/data/redis/LettuceConnectionConfiguration.class"
@@ -6677,6 +7654,9 @@
       "glob": "org/springframework/boot/sql/init/dependency/DatabaseInitializationDependencyConfigurer.class"
     },
     {
+      "glob": "org/springframework/boot/web/server/mime-mappings.properties"
+    },
+    {
       "glob": "org/springframework/context/ApplicationContextAware.class"
     },
     {
@@ -6791,10 +7771,13 @@
       "glob": "org/springframework/web/servlet/config/annotation/WebMvcConfigurer.class"
     },
     {
-      "glob": "public/index.html"
+      "glob": "org/xnio/Version.properties"
     },
     {
-      "glob": "redis/clients/jedis/pom.properties"
+      "glob": "org/xnio/nio/Version.properties"
+    },
+    {
+      "glob": "public/index.html"
     },
     {
       "glob": "resources/index.html"
@@ -6830,6 +7813,10 @@
     {
       "module": "jdk.jfr",
       "glob": "jdk/jfr/internal/query/view.ini"
+    },
+    {
+      "module": "jdk.jfr",
+      "glob": "jdk/jfr/internal/types/metadata.bin"
     }
   ],
   "bundles": [
@@ -6843,192 +7830,6 @@
       "name": "jakarta.servlet.http.LocalStrings",
       "locales": [
         "en"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.authenticator.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.authenticator.jaspic.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.connector.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.core.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.deploy.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.loader.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.mapper.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.mbeans.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.realm.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.security.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.session.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.startup.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.util.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.valves.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.catalina.webresources.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.coyote.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.coyote.http11.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.coyote.http11.filters.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.naming.LocalStrings",
-      "locales": [
-        "en"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.util.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.util.buf.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.util.compat.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.util.descriptor.web.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.util.http.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.util.http.parser.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.util.modeler.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.util.net.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.util.scan.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.util.threads.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.websocket.LocalStrings",
-      "locales": [
-        "und"
-      ]
-    },
-    {
-      "name": "org.apache.tomcat.websocket.server.LocalStrings",
-      "locales": [
-        "und"
       ]
     }
   ],
