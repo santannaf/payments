@@ -67,6 +67,15 @@
       "type": "[Z"
     },
     {
+      "type": "apple.security.AppleProvider",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
       "type": "boolean"
     },
     {
@@ -384,454 +393,16 @@
       "type": "groovy.text.markup.MarkupTemplateEngine"
     },
     {
-      "type": "io.lettuce.core.AbstractRedisClient"
-    },
-    {
-      "type": "io.lettuce.core.ChannelGroupListener"
-    },
-    {
-      "type": "io.lettuce.core.ConnectionBuilder$PlainChannelInitializer"
-    },
-    {
-      "type": "io.lettuce.core.ConnectionEventTrigger"
-    },
-    {
-      "type": "io.lettuce.core.RedisAsyncCommandsImpl"
-    },
-    {
-      "type": "io.lettuce.core.RedisChannelHandler",
-      "fields": [
-        {
-          "name": "closed"
-        }
-      ]
-    },
-    {
       "type": "io.lettuce.core.RedisClient"
-    },
-    {
-      "type": "io.lettuce.core.RedisConnectionException"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.BaseRedisCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisAclCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisFunctionCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisGeoCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisHLLCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisHashCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisJsonCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisKeyCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisListCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisScriptingCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisServerCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisSetCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisSortedSetCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisStreamCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisStringCommands"
-    },
-    {
-      "type": "io.lettuce.core.api.sync.RedisTransactionalCommands"
-    },
-    {
-      "type": "io.lettuce.core.cluster.api.sync.RedisClusterCommands"
-    },
-    {
-      "type": "io.lettuce.core.event.connection.JfrConnectEvent",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": [
-            "io.lettuce.core.event.connection.ConnectEvent"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.event.connection.JfrConnectedEvent",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": [
-            "io.lettuce.core.event.connection.ConnectionEventSupport"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.event.connection.JfrConnectionActivatedEvent",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": [
-            "io.lettuce.core.event.connection.ConnectionEventSupport"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.event.connection.JfrConnectionCreatedEvent",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": [
-            "io.lettuce.core.event.connection.ConnectionCreatedEvent"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.event.connection.JfrConnectionDeactivatedEvent",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": [
-            "io.lettuce.core.event.connection.ConnectionEventSupport"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.event.connection.JfrDisconnectedEvent",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": [
-            "io.lettuce.core.event.connection.ConnectionEventSupport"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.metrics.DefaultCommandLatencyCollector",
-      "fields": [
-        {
-          "name": "pauseDetectorWrapper"
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.protocol.AsyncCommand",
-      "fields": [
-        {
-          "name": "count"
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.protocol.CommandEncoder"
-    },
-    {
-      "type": "io.lettuce.core.protocol.CommandHandler"
-    },
-    {
-      "type": "io.lettuce.core.protocol.CommandWrapper",
-      "fields": [
-        {
-          "name": "onComplete"
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.protocol.ConnectionWatchdog"
-    },
-    {
-      "type": "io.lettuce.core.protocol.DefaultEndpoint",
-      "fields": [
-        {
-          "name": "queueSize"
-        },
-        {
-          "name": "status"
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.protocol.RedisHandshakeHandler"
-    },
-    {
-      "type": "io.lettuce.core.protocol.SharedLock",
-      "fields": [
-        {
-          "name": "writers"
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.resource.ClientResources"
-    },
-    {
-      "type": "io.lettuce.core.resource.DefaultClientResources",
-      "allDeclaredFields": true,
-      "methods": [
-        {
-          "name": "shutdown",
-          "parameterTypes": []
-        }
-      ]
-    },
-    {
-      "type": "io.lettuce.core.support.ConnectionPoolSupport$1"
-    },
-    {
-      "type": "io.lettuce.core.support.ConnectionPoolSupport$RedisPooledObjectFactory"
-    },
-    {
-      "type": "io.micrometer.context.ContextRegistry"
     },
     {
       "type": "io.micrometer.context.ContextSnapshot"
     },
     {
-      "type": "io.netty.buffer.AbstractByteBufAllocator"
-    },
-    {
-      "type": "io.netty.buffer.AbstractReferenceCountedByteBuf",
-      "fields": [
-        {
-          "name": "refCnt"
-        }
-      ]
-    },
-    {
       "type": "io.netty.buffer.PooledByteBufAllocator"
     },
     {
-      "type": "io.netty.channel.AbstractChannelHandlerContext",
-      "fields": [
-        {
-          "name": "handlerState"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.channel.ChannelOutboundBuffer",
-      "fields": [
-        {
-          "name": "totalPendingSize"
-        },
-        {
-          "name": "unwritable"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.channel.DefaultChannelConfig",
-      "fields": [
-        {
-          "name": "autoRead"
-        },
-        {
-          "name": "writeBufferWaterMark"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.channel.DefaultChannelPipeline",
-      "fields": [
-        {
-          "name": "estimatorHandle"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.channel.DefaultChannelPipeline$HeadContext"
-    },
-    {
-      "type": "io.netty.channel.DefaultChannelPipeline$TailContext"
-    },
-    {
-      "type": "io.netty.channel.epoll.Epoll"
-    },
-    {
-      "type": "io.netty.channel.kqueue.KQueue"
-    },
-    {
-      "type": "io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe"
-    },
-    {
-      "type": "io.netty.channel.nio.NioEventLoop"
-    },
-    {
-      "type": "io.netty.channel.socket.nio.NioSocketChannel",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": []
-        }
-      ]
-    },
-    {
-      "type": "io.netty.incubator.channel.uring.IOUring"
-    },
-    {
-      "type": "io.netty.resolver.dns$DnsAddressResolverGroup"
-    },
-    {
-      "type": "io.netty.resolver.dns.DnsAddressResolverGroup"
-    },
-    {
-      "type": "io.netty.util.DefaultAttributeMap",
-      "fields": [
-        {
-          "name": "attributes"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.DefaultAttributeMap$DefaultAttribute",
-      "fields": [
-        {
-          "name": "attributeMap"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.HashedWheelTimer",
-      "fields": [
-        {
-          "name": "workerState"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.HashedWheelTimer$HashedWheelTimeout",
-      "fields": [
-        {
-          "name": "state"
-        }
-      ]
-    },
-    {
       "type": "io.netty.util.NettyRuntime"
-    },
-    {
-      "type": "io.netty.util.Recycler$DefaultHandle",
-      "fields": [
-        {
-          "name": "state"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.ReferenceCountUtil"
-    },
-    {
-      "type": "io.netty.util.ResourceLeakDetector$DefaultResourceLeak",
-      "fields": [
-        {
-          "name": "droppedRecords"
-        },
-        {
-          "name": "head"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.concurrent.DefaultPromise",
-      "fields": [
-        {
-          "name": "result"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.concurrent.FastThreadLocalRunnable"
-    },
-    {
-      "type": "io.netty.util.concurrent.SingleThreadEventExecutor",
-      "fields": [
-        {
-          "name": "state"
-        },
-        {
-          "name": "threadProperties"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.concurrent.SingleThreadEventExecutor$4"
-    },
-    {
-      "type": "io.netty.util.internal.ThreadExecutorMap$2"
-    },
-    {
-      "type": "io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueColdProducerFields",
-      "fields": [
-        {
-          "name": "producerLimit"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueConsumerFields",
-      "fields": [
-        {
-          "name": "consumerIndex"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueProducerFields",
-      "fields": [
-        {
-          "name": "producerIndex"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueConsumerIndexField",
-      "fields": [
-        {
-          "name": "consumerIndex"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueProducerIndexField",
-      "fields": [
-        {
-          "name": "producerIndex"
-        }
-      ]
-    },
-    {
-      "type": "io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueProducerLimitField",
-      "fields": [
-        {
-          "name": "producerLimit"
-        }
-      ]
     },
     {
       "type": "io.r2dbc.proxy.ProxyConnectionFactory"
@@ -867,20 +438,14 @@
       ]
     },
     {
-      "type": "io.undertow.UndertowLogger_$logger_en"
+      "type": "io.undertow.UndertowLogger_$logger_pt"
+    },
+    {
+      "type": "io.undertow.UndertowLogger_$logger_pt_BR"
     },
     {
       "type": "io.undertow.UndertowOptions",
       "allDeclaredFields": true
-    },
-    {
-      "type": "io.undertow.security.handlers.AbstractConfidentialityHandler"
-    },
-    {
-      "type": "io.undertow.security.handlers.AbstractSecurityContextAssociationHandler"
-    },
-    {
-      "type": "io.undertow.security.handlers.AuthenticationMechanismsHandler"
     },
     {
       "type": "io.undertow.server.ConnectorStatisticsImpl",
@@ -918,9 +483,6 @@
       ]
     },
     {
-      "type": "io.undertow.server.Connectors"
-    },
-    {
       "type": "io.undertow.server.DefaultByteBufferPool",
       "fields": [
         {
@@ -948,18 +510,12 @@
       ]
     },
     {
-      "type": "io.undertow.server.HttpServerExchange$1"
-    },
-    {
       "type": "io.undertow.server.handlers.GracefulShutdownHandler",
       "fields": [
         {
           "name": "state"
         }
       ]
-    },
-    {
-      "type": "io.undertow.server.handlers.PredicateHandler"
     },
     {
       "type": "io.undertow.server.handlers.cache.LRUCache$CacheEntry",
@@ -1003,10 +559,10 @@
       ]
     },
     {
-      "type": "io.undertow.servlet.UndertowServletLogger_$logger_en"
+      "type": "io.undertow.servlet.UndertowServletLogger_$logger_pt"
     },
     {
-      "type": "io.undertow.servlet.core.ContextClassLoaderSetupAction$1"
+      "type": "io.undertow.servlet.UndertowServletLogger_$logger_pt_BR"
     },
     {
       "type": "io.undertow.servlet.core.ManagedFilter",
@@ -1025,55 +581,7 @@
       ]
     },
     {
-      "type": "io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1"
-    },
-    {
       "type": "io.undertow.servlet.handlers.DefaultServlet"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.FilterHandler"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.FilterHandler$FilterChainImpl"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.RedirectDirHandler"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.SendErrorPageHandler"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.ServletChain$1"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.ServletDispatchingHandler"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.ServletHandler"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.ServletInitialHandler"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.ServletInitialHandler$1"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.ServletInitialHandler$2"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.security.SSLInformationAssociationHandler"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler"
-    },
-    {
-      "type": "io.undertow.servlet.handlers.security.ServletSecurityRoleHandler"
     },
     {
       "type": "io.undertow.servlet.spec.ServletContextImpl"
@@ -1190,7 +698,10 @@
       ]
     },
     {
-      "type": "io.undertow.websockets.jsr.JsrWebSocketLogger_$logger_en"
+      "type": "io.undertow.websockets.jsr.JsrWebSocketLogger_$logger_pt"
+    },
+    {
+      "type": "io.undertow.websockets.jsr.JsrWebSocketLogger_$logger_pt_BR"
     },
     {
       "type": "io.vavr.control.Option"
@@ -1313,9 +824,6 @@
       "type": "java.lang.AutoCloseable"
     },
     {
-      "type": "java.lang.BaseVirtualThread"
-    },
-    {
       "type": "java.lang.Boolean",
       "fields": [
         {
@@ -1349,9 +857,6 @@
           "name": "classLoaderValueMap"
         }
       ]
-    },
-    {
-      "type": "java.lang.Cloneable"
     },
     {
       "type": "java.lang.Comparable"
@@ -1409,19 +914,6 @@
       "type": "java.lang.Object"
     },
     {
-      "type": "java.lang.ProcessHandle",
-      "methods": [
-        {
-          "name": "current",
-          "parameterTypes": []
-        },
-        {
-          "name": "pid",
-          "parameterTypes": []
-        }
-      ]
-    },
-    {
       "type": "java.lang.Record",
       "allDeclaredFields": true
     },
@@ -1450,16 +942,7 @@
         {
           "name": "contextClassLoader"
         }
-      ],
-      "methods": [
-        {
-          "name": "isVirtual",
-          "parameterTypes": []
-        }
       ]
-    },
-    {
-      "type": "java.lang.VirtualThread"
     },
     {
       "type": "java.lang.Void",
@@ -1536,9 +1019,6 @@
       "type": "java.lang.reflect.GenericDeclaration"
     },
     {
-      "type": "java.lang.reflect.Method"
-    },
-    {
       "type": "java.lang.reflect.ParameterizedType",
       "methods": [
         {
@@ -1591,34 +1071,6 @@
       "allDeclaredFields": true
     },
     {
-      "type": "java.nio.Bits",
-      "fields": [
-        {
-          "name": "MAX_MEMORY"
-        },
-        {
-          "name": "UNALIGNED"
-        }
-      ]
-    },
-    {
-      "type": "java.nio.Buffer",
-      "fields": [
-        {
-          "name": "address"
-        }
-      ]
-    },
-    {
-      "type": "java.nio.ByteBuffer"
-    },
-    {
-      "type": "java.nio.DirectByteBuffer"
-    },
-    {
-      "type": "java.nio.channels.spi.SelectorProvider"
-    },
-    {
       "type": "java.security.AlgorithmParametersSpi"
     },
     {
@@ -1634,23 +1086,16 @@
       "type": "java.time.Duration"
     },
     {
-      "type": "java.util.Date",
-      "allDeclaredFields": true
+      "type": "java.util.Date"
     },
     {
       "type": "java.util.EventListener"
-    },
-    {
-      "type": "java.util.Optional"
     },
     {
       "type": "java.util.SortedSet"
     },
     {
       "type": "java.util.concurrent.Callable"
-    },
-    {
-      "type": "java.util.concurrent.ConcurrentLinkedQueue"
     },
     {
       "type": "java.util.concurrent.Executor"
@@ -1743,13 +1188,7 @@
       "type": "jdk.internal.loader.ClassLoaders$PlatformClassLoader"
     },
     {
-      "type": "jdk.internal.misc.Unsafe",
-      "methods": [
-        {
-          "name": "getUnsafe",
-          "parameterTypes": []
-        }
-      ]
+      "type": "jdk.internal.misc.Unsafe"
     },
     {
       "type": "jdk.internal.net.http.HttpClientFacade",
@@ -1757,12 +1196,6 @@
     },
     {
       "type": "jdk.internal.net.http.common.OperationTrackers$Trackable"
-    },
-    {
-      "type": "jdk.internal.reflect.DirectMethodHandleAccessor"
-    },
-    {
-      "type": "jdk.jfr.Event"
     },
     {
       "type": "jdk.management.VirtualThreadSchedulerMXBean"
@@ -1804,22 +1237,7 @@
       "type": "liquibase.change.DatabaseChange"
     },
     {
-      "type": "org.HdrHistogram$Histogram"
-    },
-    {
-      "type": "org.HdrHistogram.Histogram"
-    },
-    {
-      "type": "org.LatencyUtils$PauseDetector"
-    },
-    {
-      "type": "org.LatencyUtils.PauseDetector"
-    },
-    {
       "type": "org.apache.catalina.startup.Tomcat"
-    },
-    {
-      "type": "org.apache.commons.pool2.BasePooledObjectFactory"
     },
     {
       "type": "org.apache.commons.pool2.ObjectPool"
@@ -1984,7 +1402,10 @@
       ]
     },
     {
-      "type": "org.jboss.threads.Messages_$logger_en"
+      "type": "org.jboss.threads.Messages_$logger_pt"
+    },
+    {
+      "type": "org.jboss.threads.Messages_$logger_pt_BR"
     },
     {
       "type": "org.jboss.threads.management.StandardThreadPoolMXBean"
@@ -2526,10 +1947,7 @@
       ]
     },
     {
-      "type": "org.springframework.boot.autoconfigure.data.redis.JedisConnectionConfiguration"
-    },
-    {
-      "type": "org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration",
+      "type": "org.springframework.boot.autoconfigure.data.redis.JedisConnectionConfiguration",
       "allDeclaredFields": true,
       "methods": [
         {
@@ -2543,20 +1961,15 @@
           ]
         },
         {
-          "name": "lettuceClientResources",
+          "name": "redisConnectionFactoryVirtualThreads",
           "parameterTypes": [
             "org.springframework.beans.factory.ObjectProvider"
           ]
-        },
-        {
-          "name": "redisConnectionFactoryVirtualThreads",
-          "parameterTypes": [
-            "org.springframework.beans.factory.ObjectProvider",
-            "org.springframework.beans.factory.ObjectProvider",
-            "io.lettuce.core.resource.ClientResources"
-          ]
         }
       ]
+    },
+    {
+      "type": "org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration"
     },
     {
       "type": "org.springframework.boot.autoconfigure.data.redis.PropertiesRedisConnectionDetails",
@@ -2607,7 +2020,7 @@
           "parameterTypes": []
         },
         {
-          "name": "getLettuce",
+          "name": "getJedis",
           "parameterTypes": []
         },
         {
@@ -2628,7 +2041,7 @@
       "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$ClientTypeEditor"
     },
     {
-      "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$Lettuce",
+      "type": "org.springframework.boot.autoconfigure.data.redis.RedisProperties$Jedis",
       "allDeclaredFields": true,
       "methods": [
         {
@@ -2656,19 +2069,6 @@
         {
           "name": "<init>",
           "parameterTypes": []
-        },
-        {
-          "name": "reactiveRedisTemplate",
-          "parameterTypes": [
-            "org.springframework.data.redis.connection.ReactiveRedisConnectionFactory",
-            "org.springframework.core.io.ResourceLoader"
-          ]
-        },
-        {
-          "name": "reactiveStringRedisTemplate",
-          "parameterTypes": [
-            "org.springframework.data.redis.connection.ReactiveRedisConnectionFactory"
-          ]
         }
       ]
     },
@@ -3349,6 +2749,26 @@
       ]
     },
     {
+      "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$AsyncConfigurerConfiguration",
+      "allDeclaredFields": true,
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "applicationTaskExecutorAsyncConfigurer",
+          "parameterTypes": [
+            "org.springframework.beans.factory.BeanFactory"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$AsyncConfigurerConfiguration$1",
+      "allDeclaredFields": true
+    },
+    {
       "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$BootstrapExecutorConfiguration",
       "allDeclaredFields": true,
       "methods": [
@@ -3390,7 +2810,20 @@
       ]
     },
     {
-      "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$TaskExecutorConfiguration"
+      "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$TaskExecutorConfiguration",
+      "allDeclaredFields": true,
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "applicationTaskExecutorVirtualThreads",
+          "parameterTypes": [
+            "org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder"
+          ]
+        }
+      ]
     },
     {
       "type": "org.springframework.boot.autoconfigure.task.TaskExecutorConfigurations$ThreadPoolTaskExecutorBuilderConfiguration",
@@ -4082,15 +3515,7 @@
     },
     {
       "type": "org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController",
-      "allDeclaredFields": true,
-      "methods": [
-        {
-          "name": "error",
-          "parameterTypes": [
-            "jakarta.servlet.http.HttpServletRequest"
-          ]
-        }
-      ]
+      "allDeclaredFields": true
     },
     {
       "type": "org.springframework.boot.autoconfigure.web.servlet.error.DefaultErrorViewResolver",
@@ -5061,6 +4486,13 @@
       "type": "org.springframework.core.env.EnvironmentCapable"
     },
     {
+      "type": "org.springframework.core.task.AsyncListenableTaskExecutor"
+    },
+    {
+      "type": "org.springframework.core.task.SimpleAsyncTaskExecutor",
+      "allDeclaredFields": true
+    },
+    {
       "type": "org.springframework.core.type.classreading.MetadataReaderFactory"
     },
     {
@@ -5155,44 +4587,15 @@
       "type": "org.springframework.data.redis.connection.jedis.JedisConnection"
     },
     {
-      "type": "org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory",
+      "type": "org.springframework.data.redis.connection.jedis.JedisConnectionFactory",
       "allDeclaredFields": true
     },
     {
-      "type": "org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider"
-    },
-    {
-      "type": "org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection"
-    },
-    {
-      "type": "org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider"
-    },
-    {
-      "type": "org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider"
-    },
-    {
-      "type": "org.springframework.data.redis.core.AbstractOperations"
-    },
-    {
-      "type": "org.springframework.data.redis.core.DefaultZSetOperations"
-    },
-    {
-      "type": "org.springframework.data.redis.core.ReactiveRedisOperations"
-    },
-    {
-      "type": "org.springframework.data.redis.core.ReactiveRedisTemplate",
-      "allDeclaredFields": true
-    },
-    {
-      "type": "org.springframework.data.redis.core.ReactiveStringRedisTemplate",
-      "allDeclaredFields": true
+      "type": "org.springframework.data.redis.core.ReactiveRedisTemplate"
     },
     {
       "type": "org.springframework.data.redis.core.RedisAccessor",
       "allDeclaredFields": true
-    },
-    {
-      "type": "org.springframework.data.redis.core.RedisConnectionUtils"
     },
     {
       "type": "org.springframework.data.redis.core.RedisKeyValueAdapter",
@@ -5682,6 +5085,9 @@
       "type": "org.springframework.r2dbc.connection.init.DatabasePopulator"
     },
     {
+      "type": "org.springframework.scheduling.annotation.AsyncConfigurer"
+    },
+    {
       "type": "org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"
     },
     {
@@ -5733,6 +5139,9 @@
       "type": "org.springframework.stereotype.Indexed"
     },
     {
+      "type": "org.springframework.stereotype.Service"
+    },
+    {
       "type": "org.springframework.transaction.PlatformTransactionManager"
     },
     {
@@ -5758,6 +5167,10 @@
     },
     {
       "type": "org.springframework.util.AntPathMatcher",
+      "allDeclaredFields": true
+    },
+    {
+      "type": "org.springframework.util.CustomizableThreadCreator",
       "allDeclaredFields": true
     },
     {
@@ -5855,17 +5268,11 @@
       "allDeclaredFields": true
     },
     {
-      "type": "org.springframework.web.method.annotation.ExceptionHandlerMethodResolver"
-    },
-    {
       "type": "org.springframework.web.method.support.CompositeUriComponentsContributor",
       "allDeclaredFields": true
     },
     {
       "type": "org.springframework.web.method.support.HandlerMethodArgumentResolver"
-    },
-    {
-      "type": "org.springframework.web.method.support.InvocableHandlerMethod"
     },
     {
       "type": "org.springframework.web.method.support.UriComponentsContributor"
@@ -6129,9 +5536,6 @@
       "allDeclaredFields": true
     },
     {
-      "type": "org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod"
-    },
-    {
       "type": "org.springframework.web.servlet.resource.ResourceUrlProvider",
       "allDeclaredFields": true
     },
@@ -6247,7 +5651,10 @@
       ]
     },
     {
-      "type": "org.xnio._private.Messages_$logger_en"
+      "type": "org.xnio._private.Messages_$logger_pt"
+    },
+    {
+      "type": "org.xnio._private.Messages_$logger_pt_BR"
     },
     {
       "type": "org.xnio.management.XnioProviderMXBean"
@@ -6274,7 +5681,10 @@
       ]
     },
     {
-      "type": "org.xnio.nio.Log_$logger_en"
+      "type": "org.xnio.nio.Log_$logger_pt"
+    },
+    {
+      "type": "org.xnio.nio.Log_$logger_pt_BR"
     },
     {
       "type": "org.xnio.nio.NioSocketConduit",
@@ -6355,50 +5765,7 @@
       "type": "reactor.core.publisher.Hooks"
     },
     {
-      "type": "reactor.core.publisher.LambdaMonoSubscriber",
-      "fields": [
-        {
-          "name": "subscription"
-        }
-      ]
-    },
-    {
       "type": "reactor.core.publisher.Mono"
-    },
-    {
-      "type": "reactor.core.publisher.MonoCallable$MonoCallableSubscription",
-      "fields": [
-        {
-          "name": "requestedOnce"
-        }
-      ]
-    },
-    {
-      "type": "reactor.core.publisher.SinkManyBestEffort",
-      "fields": [
-        {
-          "name": "subscribers"
-        }
-      ]
-    },
-    {
-      "type": "reactor.core.publisher.SinksSpecs$AbstractSerializedSink",
-      "fields": [
-        {
-          "name": "lockedAt"
-        },
-        {
-          "name": "wip"
-        }
-      ]
-    },
-    {
-      "type": "reactor.core.scheduler.DelegateServiceScheduler",
-      "fields": [
-        {
-          "name": "state"
-        }
-      ]
     },
     {
       "type": "reactor.netty.http.client.HttpClient"
@@ -6413,6 +5780,9 @@
       "type": "redis.clients.jedis.Jedis"
     },
     {
+      "type": "redis.clients.jedis.JedisPool"
+    },
+    {
       "type": "santannaf.payments.payments.Application",
       "allDeclaredFields": true,
       "methods": [
@@ -6423,24 +5793,14 @@
           ]
         },
         {
-          "name": "executorService",
-          "parameterTypes": []
-        },
-        {
           "name": "httpClient",
-          "parameterTypes": [
-            "java.util.concurrent.ExecutorService"
-          ]
+          "parameterTypes": []
         },
         {
           "name": "main",
           "parameterTypes": [
             "java.lang.String[]"
           ]
-        },
-        {
-          "name": "paymentQueue",
-          "parameterTypes": []
         }
       ]
     },
@@ -6510,22 +5870,23 @@
       ]
     },
     {
-      "type": "santannaf.payments.payments.PaymentProcess"
+      "type": "santannaf.payments.payments.PaymentService"
     },
     {
-      "type": "santannaf.payments.payments.PaymentWorker",
+      "type": "santannaf.payments.payments.PaymentServiceImpl",
       "allDeclaredFields": true,
       "methods": [
         {
           "name": "<init>",
           "parameterTypes": [
-            "java.util.Queue",
-            "santannaf.payments.payments.PaymentProcess"
+            "org.springframework.data.redis.core.RedisTemplate",
+            "java.lang.String",
+            "java.lang.String",
+            "int",
+            "int",
+            "int",
+            "java.net.http.HttpClient"
           ]
-        },
-        {
-          "name": "start",
-          "parameterTypes": []
         }
       ]
     },
@@ -6536,11 +5897,7 @@
         {
           "name": "<init>",
           "parameterTypes": [
-            "org.springframework.data.redis.core.RedisTemplate",
-            "java.util.Queue",
-            "java.lang.String",
-            "java.net.http.HttpClient",
-            "java.util.concurrent.ExecutorService"
+            "santannaf.payments.payments.PaymentService"
           ]
         },
         {
@@ -6603,32 +5960,7 @@
         {
           "name": "theUnsafe"
         }
-      ],
-      "methods": [
-        {
-          "name": "invokeCleaner",
-          "parameterTypes": [
-            "java.nio.ByteBuffer"
-          ]
-        }
       ]
-    },
-    {
-      "type": "sun.nio.ch.Net"
-    },
-    {
-      "type": "sun.nio.ch.SelectorImpl",
-      "fields": [
-        {
-          "name": "publicSelectedKeys"
-        },
-        {
-          "name": "selectedKeys"
-        }
-      ]
-    },
-    {
-      "type": "sun.nio.ch.SocketChannelImpl"
     },
     {
       "type": "sun.security.pkcs12.PKCS12KeyStore",
@@ -6944,14 +6276,6 @@
     {
       "type": {
         "proxy": [
-          "io.lettuce.core.api.sync.RedisCommands",
-          "io.lettuce.core.cluster.api.sync.RedisClusterCommands"
-        ]
-      }
-    },
-    {
-      "type": {
-        "proxy": [
           "java.lang.reflect.ParameterizedType",
           "org.springframework.core.SerializableTypeWrapper$SerializableTypeProxy",
           "java.io.Serializable"
@@ -7117,13 +6441,19 @@
       "glob": "jakarta/servlet/LocalStrings.properties"
     },
     {
-      "glob": "jakarta/servlet/LocalStrings_en.properties"
+      "glob": "jakarta/servlet/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "jakarta/servlet/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "jakarta/servlet/http/LocalStrings.properties"
     },
     {
-      "glob": "jakarta/servlet/http/LocalStrings_en.properties"
+      "glob": "jakarta/servlet/http/LocalStrings_pt.properties"
+    },
+    {
+      "glob": "jakarta/servlet/http/LocalStrings_pt_BR.properties"
     },
     {
       "glob": "jndi.properties"
@@ -7277,9 +6607,6 @@
     },
     {
       "glob": "org/springframework/boot/autoconfigure/data/redis/JedisConnectionConfiguration.class"
-    },
-    {
-      "glob": "org/springframework/boot/autoconfigure/data/redis/LettuceConnectionConfiguration$PoolBuilderFactory.class"
     },
     {
       "glob": "org/springframework/boot/autoconfigure/data/redis/LettuceConnectionConfiguration.class"
@@ -7780,6 +7107,9 @@
       "glob": "public/index.html"
     },
     {
+      "glob": "redis/clients/jedis/pom.properties"
+    },
+    {
       "glob": "resources/index.html"
     },
     {
@@ -7789,10 +7119,10 @@
       "glob": "santannaf/payments/payments/Application.class"
     },
     {
-      "glob": "santannaf/payments/payments/PaymentProcess.class"
+      "glob": "santannaf/payments/payments/PaymentService.class"
     },
     {
-      "glob": "santannaf/payments/payments/PaymentWorker.class"
+      "glob": "santannaf/payments/payments/PaymentServiceImpl.class"
     },
     {
       "glob": "santannaf/payments/payments/PaymentsController.class"
@@ -7807,29 +7137,29 @@
       "glob": "static/index.html"
     },
     {
+      "module": "java.base",
+      "glob": "jdk/internal/icu/impl/data/icudt76b/nfc.nrm"
+    },
+    {
       "module": "java.xml",
       "glob": "jdk/xml/internal/jdkcatalog/JDKCatalog.xml"
     },
     {
       "module": "jdk.jfr",
       "glob": "jdk/jfr/internal/query/view.ini"
-    },
-    {
-      "module": "jdk.jfr",
-      "glob": "jdk/jfr/internal/types/metadata.bin"
     }
   ],
   "bundles": [
     {
       "name": "jakarta.servlet.LocalStrings",
       "locales": [
-        "en"
+        "pt-BR"
       ]
     },
     {
       "name": "jakarta.servlet.http.LocalStrings",
       "locales": [
-        "en"
+        "pt-BR"
       ]
     }
   ],

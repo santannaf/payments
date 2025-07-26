@@ -42,7 +42,7 @@ services:
     environment:
       - HOST_PROCESSOR_DEFAULT=http://payment-processor-default:8080
       - REDIS_HOST=redis
-      - POOL_FIXED_THREADS=10
+      - POOL_FIXED_THREADS=5
     networks:
       - backend
       - payment-processor
@@ -64,7 +64,7 @@ services:
     environment:
       - HOST_PROCESSOR_DEFAULT=http://payment-processor-default:8080
       - REDIS_HOST=redis
-      - POOL_FIXED_THREADS=10
+      - POOL_FIXED_THREADS=5
 
 networks:
   backend:

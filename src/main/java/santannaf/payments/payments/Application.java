@@ -1,6 +1,5 @@
 package santannaf.payments.payments;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,10 +10,6 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @SpringBootApplication
 public class Application {
@@ -22,24 +17,13 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    @Value("${fixed.pool.thread}")
-    int fixedPoolThread;
-
     @Bean
-    public ExecutorService executorService() {
-        return Executors.newFixedThreadPool(fixedPoolThread, Thread.ofVirtual().factory());
-    }
-
-    @Bean
-    public HttpClient httpClient(ExecutorService executorService) {
+    public HttpClient httpClient() {
         return HttpClient.newBuilder()
-                .executor(executorService)
+                .followRedirects(java.net.http.HttpClient.Redirect.NEVER)
+                .version(java.net.http.HttpClient.Version.HTTP_1_1)
+                .executor(Runnable::run)
                 .build();
-    }
-
-    @Bean
-    public Queue<Payment> paymentQueue() {
-        return new ConcurrentLinkedQueue<>();
     }
 
     @Bean
